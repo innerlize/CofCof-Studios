@@ -11,6 +11,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+section {
+  padding: 0 25px;
+}
+
 a {
   color: inherit;
   text-decoration: none;

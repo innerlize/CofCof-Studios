@@ -4,7 +4,9 @@ import NavbarStyles from './Navbar.module.css';
 export default function Navbar() {
     return (
         <nav className={NavbarStyles.navbar}>
-            <Image src='/Logo_cofcof.svg' width={55} height={32} />
+            <a href='#'>
+                <Image src='/Logo_cofcof.svg' width={55} height={32} />
+            </a>
             
             <div className={NavbarStyles.hamburguer}>
                 xD
