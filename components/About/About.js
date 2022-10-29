@@ -7,7 +7,7 @@ export default function About() {
         <section className={AboutStyles.about}>
             <div>
                 <h2 className={AboutStyles.about_title}>WHAT WE DO?</h2>
-                <p className={AboutStyles.about_desc}>Our mission is to solve problems. There is nothing we can't solve. We offer our clients a comprehensive service for the production of films and video games, from pre_production to post_production, specializing in the development of 3D pipeline for film and video games, we also provide 3D and consulting services.</p>
+                <p className={AboutStyles.about_desc}>Our mission is to solve problems. There is nothing we can&apos;t solve. We offer our clients a comprehensive service for the production of films and video games, from pre-production to post-production, specializing in the development of 3D pipeline for film and video games, we also provide 3D and consulting services.</p>
             </div>
 
             <div className={AboutStyles.div}>
