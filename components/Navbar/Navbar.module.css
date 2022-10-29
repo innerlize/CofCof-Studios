@@ -1,0 +1,17 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 55px;
+    padding: 0 20px;
+    background-color: linear-gradient(red, yellow);
+}
+
+.hamburguer {
+    width: 36px;
+    height: 18px;
+    background-color: red;
+}
