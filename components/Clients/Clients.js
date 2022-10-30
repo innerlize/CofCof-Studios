@@ -20,9 +20,9 @@ export default function Clients() {
                         delay: 2500,
                         disableOnInteraction: false,
                     }}
-                    navigation={true}
                     modules={[Autoplay]}
                     className="mySwiper"
+                    loop={true}
                     style={{marginBottom: '40px'}}
                 >
                     <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'red'}}>Slide 1</SwiperSlide>
@@ -43,9 +43,10 @@ export default function Clients() {
                         delay: 2500,
                         disableOnInteraction: false,
                     }}
-                    navigation={true}
                     modules={[Autoplay]}
                     className="mySwiper"
+                    loop={true}
+                    dir="rtl"
                 >
                     <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'red'}}>Slide 1</SwiperSlide>
                     <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'green'}}>Slide 2</SwiperSlide>
