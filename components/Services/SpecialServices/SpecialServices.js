@@ -25,7 +25,7 @@ export default function SpecialServices() {
                 <p className={SpecialServicesStyles.desc}>
                     A 3D Pipeline is a vision for sustainable and scalable development through design and engineering standards.
                     
-                    We believe that standards are a good thing for all companies. That's why we have created several 3D Pipeline models to help ensure, productivity and your workers.
+                    We believe that standards are a good thing for all companies. That&apos;s why we have created several 3D Pipeline models to help ensure, productivity and your workers.
                     
                     Cofcof Studios builds and structures within each DCCs (Perforce, Shotgrid, Maya, Blender, and more) tools to generate a fast and automated workflow to drastically reduce human error so that production can focus on more important processes that require more detail and attention from staff.
                 </p>
