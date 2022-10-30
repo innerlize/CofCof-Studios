@@ -1,6 +1,7 @@
 .section {
     position: relative;
     padding: 60px 25px;
+    overflow: hidden;
 }
 
 .section:before {
