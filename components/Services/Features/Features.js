@@ -19,8 +19,7 @@ export default function Features() {
             <div className={FeaturesStyle.feature}>
                 <div className={FeaturesStyle.feature_image}></div>
                 <h4 className={FeaturesStyle.feature_title}>FINISH YOUR <br /> PROJECT <br /> ON TIME</h4>
-                <p className={FeaturesStyle.feature_desc}>Our team is committed to meeting all deadlines set by clients. We strive to deliver projects on time and, of course, ensure client expectations are always met and exceeded. <br /> <br /> We <span>really</span> appreciate your time.
-</p>
+                <p className={FeaturesStyle.feature_desc}>Our team is committed to meeting all deadlines set by clients. We strive to deliver projects on time and, of course, ensure client expectations are always met and exceeded. <br /> <br /> We <span>really</span> appreciate your time.</p>
             </div>
         </article>
     )

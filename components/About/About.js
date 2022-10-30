@@ -14,11 +14,11 @@ export default function About() {
                 <Image className={AboutStyles.about_polygon} src='/About_nav_polygon.svg' width={116} height={116} />
                 <nav className={AboutStyles.about_nav}>
                     <div className={AboutStyles.about_nav_links_container}>
-                        <a href='#' className={AboutStyles.about_nav_link}>SERVICES</a>
-                        <a href='#' className={AboutStyles.about_nav_link}>PORTFOLIO</a>
+                        <a href='#services' className={AboutStyles.about_nav_link}>SERVICES</a>
+                        <a href='#portfolio' className={AboutStyles.about_nav_link}>PORTFOLIO</a>
                     </div>
                     <div className={AboutStyles.about_nav_links_container}>
-                        <a href='#' className={AboutStyles.about_nav_link}>GET IN TOUCH</a>
+                        <a href='#contact' className={AboutStyles.about_nav_link}>GET IN TOUCH</a>
                     </div>
                 </nav>
             </div>

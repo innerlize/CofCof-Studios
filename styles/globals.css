@@ -5,6 +5,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #F2F2F2;
   background-color: #0A0A0A;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
