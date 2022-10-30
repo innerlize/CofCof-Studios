@@ -3,6 +3,7 @@ import Header from '../components/Header/Header.js';
 import Navbar from '../components/Navbar/Navbar.js';
 import About from '../components/About/About.js';
 import Services from '../components/Services/Services.js';
+import Clients from '../components/Clients/Clients.js';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
         <Header />
         <About />
         <Services />
+        <Clients />
       </main>
     </div>
   )

@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: #0A0A0A;
 }
 
 .div {
@@ -73,4 +74,10 @@
     color: #0A0A0A;
     background-color: #F2F2F2;
     border-radius: 3px;
+    transition: all .3s ease-in-out;
+}
+
+.about_nav_link:hover {
+    color: #F2F2F2;
+    background-color: #15B4E7;
 }
