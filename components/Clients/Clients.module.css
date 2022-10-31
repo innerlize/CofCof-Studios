@@ -7,10 +7,10 @@
 .section:before {
     content: '';
     position: absolute;
-    top: -1%;
-    left: 51%;
-    transform: translate(-51%);
-    width: 101%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
     height: 51%;
     background-color: #0A0A0A;
     z-index: -1;
@@ -19,10 +19,10 @@
 .section:after {
     content: '';
     position: absolute;
-    left: 51%;
-    bottom: -1%;
-    transform: translate(-51%);
-    width: 101%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    width: 100%;
     height: 52%;
     background-color: #060606;
     z-index: -1;

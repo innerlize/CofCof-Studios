@@ -1,0 +1,39 @@
+.section {
+    padding: 74px 25px;
+    text-align: center;
+    background-color: #060606;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 72px;
+}
+
+.title span {
+    color: #BD1FBD;
+}
+
+.counter_container {
+    padding: 72px 0 93px 0;
+    background-color: #0A0A0A;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px 2px #000000;
+    margin: 30px 0;
+}
+
+.counter_container:last-child {
+    margin: 0;
+}
+
+.number {
+    font-family: Hind, sans-serif;
+    font-size: 96px;
+    font-weight: 900;
+    margin-bottom: -21px;
+}
+
+.category {
+    font-size: 24px;
+    font-weight: 500;
+}
