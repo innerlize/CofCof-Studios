@@ -12,3 +12,49 @@
 .section h3 span {
     color: #15B4E7;
 }
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+    padding: 35px 16px;
+    border-radius: 10px 10px 0 0;
+    background-color: #111627;
+}
+
+.footer hr {
+    width: 100%;
+    opacity: .2;
+}
+
+.map {
+    width: 100%;
+    height: 47vw;
+    border-radius: 10px;
+}
+
+.extra_contact_info {
+    display: inline-block;
+    margin: auto;
+}
+
+.extra_contact_info_container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.extra_contact_info_container:nth-child(2) {
+    margin: 10px 0;
+}
+
+.social_media_container {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+}
+
+.social_media_container a:hover {
+    color: #15B4E7;
+}

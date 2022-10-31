@@ -13,7 +13,7 @@ export default function Form() {
 
             <textarea className={FormStyles.message} placeholder="Give us all the details!"></textarea>
 
-            <button className={FormStyles.send}>Send</button>
+            <button>Send</button>
         </form>
     )
 }
