@@ -1,0 +1,14 @@
+.section {
+    padding: 90px 34px 0 34px;
+    background-color: #0A0A0A;
+    text-align: center;
+}
+
+.section h3 {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.section h3 span {
+    color: #15B4E7;
+}

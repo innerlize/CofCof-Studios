@@ -97,8 +97,8 @@
 }
 
 .swiper_gallery_slide {
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
 }
 
 .swiper_gallery_slide img {

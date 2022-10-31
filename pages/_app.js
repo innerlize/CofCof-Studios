@@ -6,6 +6,7 @@ import Services from '../components/Services/Services.js';
 import Clients from '../components/Clients/Clients.js';
 import Counters from '../components/Counters/Counters.js';
 import Works from '../components/Works/Works.js';
+import Contact from '../components/Contact/Contact.js';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }) {
         <Clients />
         <Counters />
         <Works />
+        <Contact />
       </main>
     </div>
   )
