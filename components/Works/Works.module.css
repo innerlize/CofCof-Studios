@@ -20,6 +20,17 @@
     background-color: rgba(10, 10, 10, 0.8);
 }
 
+.swiper {
+    padding: 5px 50px;
+}
+
+.swiper_slide {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
 .swiper_slide img {
     border-radius: 10px;
 }
@@ -79,6 +90,15 @@
     width: 100%;
     height: 50vw;
     margin-bottom: 18px;
+}
+
+.swiper_gallery {
+    padding: 5px 50px;
+}
+
+.swiper_gallery_slide {
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
 }
 
 .swiper_gallery_slide img {

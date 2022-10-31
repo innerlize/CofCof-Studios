@@ -26,19 +26,8 @@ a {
   box-sizing: border-box;
 }
 
-.swiper {
-    padding: 5px 50px;
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
-}
-
 .swiper-slide-visible {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .swiper-button-prev:after {

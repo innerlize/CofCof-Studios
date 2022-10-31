@@ -23,7 +23,7 @@ export default function Works() {
                         modules={[Navigation]}
                         navigation={{
                         }}
-                        className="mySwiper"
+                        className={WorksStyles.swiper}
                     >
                         <SwiperSlide className={WorksStyles.swiper_slide}>
                             <Image src='/Poster3.png' width={50} height={50} />
@@ -89,6 +89,7 @@ export default function Works() {
 
                     <Swiper
                         slidesPerView={3}
+                        spaceBetween={10}
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,
@@ -97,7 +98,7 @@ export default function Works() {
                         modules={[Navigation]}
                         navigation={{
                         }}
-                        className="mySwiper"
+                        className={WorksStyles.swiper_gallery}
                     >
                         <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
                             <Image src='/Poster3.png' width={50} height={50} />
