@@ -5,6 +5,7 @@ import About from '../components/About/About.js';
 import Services from '../components/Services/Services.js';
 import Clients from '../components/Clients/Clients.js';
 import Counters from '../components/Counters/Counters.js';
+import Works from '../components/Works/Works.js';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }) {
         <Services />
         <Clients />
         <Counters />
+        <Works />
       </main>
     </div>
   )

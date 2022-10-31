@@ -1,0 +1,86 @@
+.section {
+    height: 100vh;
+    padding: 0;
+}
+
+.poster_container {
+    position: relative;
+    width: 100%;
+    height: 37%;
+}
+
+.poster_container img {
+    object-fit: cover;
+}
+
+.projects_carousel_container {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: rgba(10, 10, 10, 0.8);
+}
+
+.swiper_slide img {
+    border-radius: 10px;
+}
+
+.info_container {
+    position: relative;
+    height: 63%;
+    padding: 0 35px 40px 35px;
+    color: #F2F2F2;
+    background-color: #0A0A0A;
+    text-align: center;
+    overflow: scroll;
+}
+
+.pad {
+    content: '';
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #0A0A0A;
+}
+
+.info_container h4 {
+    font-size: 20px;
+    font-weight: 900;
+    color: #15B4E7;
+}
+
+.init_info_container {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    margin-top: 30px;
+}
+
+.info_container div div p {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.info_container div div p:nth-child(2) {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 7px;
+    letter-spacing: .5px;
+}
+
+.desc {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: Hind, sans-serif;
+    margin: 40px 0 30px 0;
+}
+
+.video {
+    width: 100%;
+    height: 50vw;
+    margin-bottom: 18px;
+}
+
+.swiper_gallery_slide img {
+    border-radius: 3px;
+}

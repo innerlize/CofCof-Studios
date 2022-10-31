@@ -25,3 +25,28 @@ a {
   margin: 0;
   box-sizing: border-box;
 }
+
+.swiper {
+    padding: 5px 50px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.swiper-slide-visible {
+  opacity: 1;
+}
+
+.swiper-button-prev:after {
+  font-size: 30px;
+  color: #F2F2F2;
+}
+
+.swiper-button-next:after {
+  font-size: 30px;
+  color: #F2F2F2;
+}
