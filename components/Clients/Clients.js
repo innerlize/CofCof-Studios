@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import "swiper/css";
@@ -25,15 +26,33 @@ export default function Clients() {
                     loop={true}
                     style={{marginBottom: '40px'}}
                 >
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'red'}}>Slide 1</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'green'}}>Slide 2</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'blue'}}>Slide 3</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'violet'}}>Slide 4</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'yellow'}}>Slide 5</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'grey'}}>Slide 6</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'pink'}}>Slide 7</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'purple'}}>Slide 8</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'lightblue'}}>Slide 9</SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo1.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo2.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo3.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo4.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo5.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo6.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo7.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo8.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo9.png' width={60} height={60} />
+                    </SwiperSlide>
                 </Swiper>
 
                 <Swiper
@@ -48,15 +67,33 @@ export default function Clients() {
                     loop={true}
                     dir="rtl"
                 >
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'red'}}>Slide 1</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'green'}}>Slide 2</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'blue'}}>Slide 3</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'violet'}}>Slide 4</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'yellow'}}>Slide 5</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'grey'}}>Slide 6</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'pink'}}>Slide 7</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'purple'}}>Slide 8</SwiperSlide>
-                    <SwiperSlide style={{width: '60px', height: '60px', backgroundColor: 'lightblue'}}>Slide 9</SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo3.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo1.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo4.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo6.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo2.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo8.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo5.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo9.png' width={60} height={60} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src='/Logo7.png' width={60} height={60} />
+                    </SwiperSlide>
                 </Swiper>
             </div>
         </section>
