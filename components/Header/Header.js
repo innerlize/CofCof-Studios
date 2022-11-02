@@ -1,10 +1,14 @@
 import Image from 'next/image';
-import HeaderStyles from './Header.module.css';
+import HeaderStyles from './Header.module.scss';
+import Logo from './Header_Logo_cofcof.svg';
 
 export default function Header() {
     return (
         <header className={HeaderStyles.header}>
-            <Image src='/Header_Logo_cofcof.svg' width={272} height={204} draggable='false' />
+            <Image
+                src={Logo}
+                draggable='false'
+            />
         </header>
     )
 }

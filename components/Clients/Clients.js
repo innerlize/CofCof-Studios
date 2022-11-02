@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import "swiper/css";
-import ClientsStyles from './Clients.module.css';
+import ClientsStyles from './Clients.module.scss';
 
 
 export default function Clients() {
@@ -15,7 +15,23 @@ export default function Clients() {
                 </div>
 
                 <Swiper
-                    slidesPerView={3}
+                    breakpoints={{
+                        // when window width is >= 0
+                        0: {
+                            slidesPerView: 3
+                        },
+
+                        // when window width is >= 768
+                        768: {
+                            slidesPerView: 4
+                        },
+
+                        // when window width is >= 1020
+                        1020: {
+                            slidesPerView: 7
+                        }
+                    }}
+                    slidesPerView="auto"
                     spaceBetween={25}
                     autoplay={{
                         delay: 2500,
@@ -56,7 +72,23 @@ export default function Clients() {
                 </Swiper>
 
                 <Swiper
-                    slidesPerView={3}
+                    breakpoints={{
+                        // when window width is >= 0
+                        0: {
+                            slidesPerView: 3
+                        },
+
+                        // when window width is >= 768
+                        768: {
+                            slidesPerView: 4
+                        },
+
+                        // when window width is >= 1020
+                        1020: {
+                            slidesPerView: 7
+                        }
+                    }}
+                    slidesPerView="auto"
                     spaceBetween={25}
                     autoplay={{
                         delay: 2500,

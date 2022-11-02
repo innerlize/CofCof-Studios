@@ -1,4 +1,4 @@
-import FeaturesStyle from './Features.module.css';
+import FeaturesStyle from './Features.module.scss';
 
 
 export default function Features() {
@@ -7,7 +7,7 @@ export default function Features() {
             <div className={FeaturesStyle.feature}>
                 <div className={FeaturesStyle.feature_image}></div>
                 <h4 className={FeaturesStyle.feature_title}>ALWAYS BY YOUR <br /> SIDE</h4>
-                <p className={FeaturesStyle.feature_desc}>Because we have a significant experience with diverse pipelines, we seamlessly integrate them into our partner’s processes and vice versa, minimizing errors and ensuring an efficient production. We cover the entire production cycle from pre-production to LiveOps.</p>
+                <p className={FeaturesStyle.feature_desc}>Because we have a significant experience with diverse pipelines, we seamlessly integrate them into our partner&apos;s processes and vice versa, minimizing errors and ensuring an efficient production. We cover the entire production cycle from pre-production to LiveOps.</p>
             </div>
 
             <div className={FeaturesStyle.feature}>

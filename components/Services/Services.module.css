@@ -2,3 +2,9 @@
     padding: 120px 25px;
     background-color: #0A0A0A;
 }
+
+@media only screen and (min-width: 768px) {
+    .section {
+        padding: 120px 92px;
+    }
+}

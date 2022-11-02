@@ -25,13 +25,15 @@
 }
 
 .swiper_slide {
-  display: flex;
-  justify-content: center;
   opacity: 0;
   transition: opacity .3s ease-in-out;
 }
 
-.swiper_slide img {
+.swiper_slide div {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: auto;
     border-radius: 10px;
 }
 
@@ -103,4 +105,43 @@
 
 .swiper_gallery_slide img {
     border-radius: 3px;
+}
+
+@media only screen and (min-width: 768px) {
+    .info_container {
+        padding: 0 75px 60px 75px;
+        color: #F2F2F2;
+        background-color: #0A0A0A;
+        text-align: center;
+        overflow: scroll;
+    }
+
+    .pad {
+        height: 60px;
+    }
+
+    .info_container h4 {
+        font-size: 40px;
+    }
+    
+    .init_info_container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin-top: 50px;
+    }
+    
+    .info_container div div p {
+        font-size: 18px;
+    }
+    
+    .info_container div div p:nth-child(2) {
+        font-size: 20px;
+        margin-top: 11px;
+    }
+    
+    .desc {
+        font-size: 22px;
+        margin: 50px 0 40px 0;
+    }
 }

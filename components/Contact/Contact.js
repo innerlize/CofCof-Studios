@@ -5,7 +5,7 @@ import ContactStyles from './Contact.module.css';
 
 export default function Contact() {
     return (
-        <section className={ContactStyles.section}>
+        <section className={ContactStyles.section} id='contact'>
             <div>
                 <h3>Let&apos;s <span>get</span> in touch!</h3>
 

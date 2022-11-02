@@ -37,3 +37,29 @@
     font-size: 24px;
     font-weight: 500;
 }
+
+@media only screen and (min-width: 768px) {
+    .section {
+        padding: 125px 206px;
+    }
+
+    .title {
+        font-size: 45px;
+    }
+
+    .counter_container {
+        margin: 45px 0;
+    }
+
+    .number {
+        font-family: Hind, sans-serif;
+        font-size: 128px;
+        font-weight: 900;
+        margin-bottom: -41px;
+    }
+    
+    .category {
+        font-size: 36px;
+        font-weight: 500;
+    }
+}

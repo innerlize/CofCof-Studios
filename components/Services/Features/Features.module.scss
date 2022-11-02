@@ -32,12 +32,37 @@
 }
 
 .feature_desc {
+    font-family: Hind, sans-serif;
     font-size: 15px;
     font-weight: 300;
     line-height: 24px;
     color: rgba(255, 255, 255, .8);
+
+    span {
+        color: #15B4E7;
+    }
 }
 
-.feature_desc span {
-    color: #15B4E7;
+
+/* -------------------------------------- */
+
+
+@media only screen and (min-width: 768px) {
+    .article {
+        padding: 0 60px;
+    }
+
+    .feature {
+        padding: 48px;
+    }
+
+    .feature_title {
+        font-size: 26px;
+        margin: 40px 0;
+    }
+    
+    .feature_desc {
+        font-size: 20px;
+        line-height: 32px;
+    }
 }

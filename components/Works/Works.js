@@ -8,13 +8,29 @@ import WorksStyles from './Works.module.css';
 
 export default function Works() {
     return (
-        <section className={WorksStyles.section}>
+        <section className={WorksStyles.section} id='works'>
             <div className={WorksStyles.poster_container}>
                 <Image src='/Poster3.png' fill />
 
                 <div className={WorksStyles.projects_carousel_container}>
                     <Swiper
-                        slidesPerView={4}
+                        breakpoints={{
+                            // when window width is >= 0
+                            0: {
+                                slidesPerView: 4
+                            },
+
+                            // when window width is >= 768
+                            768: {
+                                slidesPerView: 6
+                            },
+
+                            // when window width is >= 1020
+                            1020: {
+                                slidesPerView: 4
+                            }
+                        }}
+                        slidesPerView="auto"
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,
@@ -26,31 +42,49 @@ export default function Works() {
                         className={WorksStyles.swiper}
                     >
                         <SwiperSlide className={WorksStyles.swiper_slide}>
-                            <Image src='/Poster3.png' width={50} height={50} />
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide className={WorksStyles.swiper_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide className={WorksStyles.swiper_slide}>
-                            <Image src='/Poster.jpg' width={50} height={50} />
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide className={WorksStyles.swiper_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide className={WorksStyles.swiper_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide className={WorksStyles.swiper_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide className={WorksStyles.swiper_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide className={WorksStyles.swiper_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide className={WorksStyles.swiper_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
                     </Swiper>
                 </div>
@@ -88,7 +122,23 @@ export default function Works() {
                     <iframe className={WorksStyles.video} width="853" height="480" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="SPIDER-MAN: NO WAY HOME - Official Trailer (HD)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     <Swiper
-                        slidesPerView={3}
+                        breakpoints={{
+                            // when window width is >= 0
+                            0: {
+                                slidesPerView: 3
+                            },
+
+                            // when window width is >= 768
+                            768: {
+                                slidesPerView: 5
+                            },
+
+                            // when window width is >= 1020
+                            1020: {
+                                slidesPerView: 5
+                            }
+                        }}
+                        slidesPerView="auto"
                         spaceBetween={10}
                         autoplay={{
                             delay: 2500,
@@ -100,32 +150,50 @@ export default function Works() {
                         }}
                         className={WorksStyles.swiper_gallery}
                     >
-                        <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                            <Image src='/Poster3.png' width={50} height={50} />
+                        <SwiperSlide className={WorksStyles.swiper_slide}>
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
-                        <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                        <SwiperSlide className={WorksStyles.swiper_slide}>
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
-                        <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                            <Image src='/Poster.jpg' width={50} height={50} />
+                        <SwiperSlide className={WorksStyles.swiper_slide}>
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
-                        <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                        <SwiperSlide className={WorksStyles.swiper_slide}>
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
-                        <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                        <SwiperSlide className={WorksStyles.swiper_slide}>
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
-                        <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                        <SwiperSlide className={WorksStyles.swiper_slide}>
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
-                        <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                        <SwiperSlide className={WorksStyles.swiper_slide}>
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
-                        <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                        <SwiperSlide className={WorksStyles.swiper_slide}>
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
-                        <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                            <Image src='/Poster2.webp' width={50} height={50} />
+                        <SwiperSlide className={WorksStyles.swiper_slide}>
+                            <div>
+                                <Image src='/Poster3.png' fill />
+                            </div>
                         </SwiperSlide>
                     </Swiper>
                 </div>

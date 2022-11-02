@@ -1,0 +1,146 @@
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-align: center;
+    background-color: #0A0A0A;
+}
+
+.text_container {
+    
+    h2 {
+        position: relative;
+        font-size: 2em;
+        font-weight: 900;
+        letter-spacing: 2px;
+        margin-bottom: 65px;
+
+        &::before {
+            margin-left: -70px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            bottom: -26px;
+            width: 40px;
+            height: 2px;
+            background-color: #F2F2F2;
+        }
+
+        &::after {
+            margin-left: 70px;
+        }
+    }
+
+    p {
+        font-family: Hind, sans-serif;
+        font-size: 0.9375em;
+        font-weight: 300;
+        line-height: 1.5em;
+        letter-spacing: 0.034em;
+        color: rgba(255, 255, 255, .7);
+    }
+}
+
+.nav_container {
+    width: 100%;
+
+    img {
+        margin: 65px 0 40px 0;
+    }
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.nav_row {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+}
+
+.nav_link {
+    width: 10em;
+    height: 3.22em;
+    font-size: 0.875em;
+    font-weight: 900;
+    line-height: 3.22em;
+    color: #0A0A0A;
+    background-color: #F2F2F2;
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        color: #F2F2F2;
+        background-color: #15B4E7;
+    }
+}
+
+
+/* -------------------------------------- */
+
+
+@media only screen and (min-width: 768px) {
+    .section {
+        font-size: 20px;
+        padding: 0 92px;
+    }
+
+    .text_container {
+
+        h2 {
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: initial;
+                bottom: initial;
+                transform: translate(-50%);
+                width: 60px;
+            }
+        }
+
+        p {
+            font-size: 1.2em;
+            letter-spacing: 0.034em;
+        }
+    }
+
+    .nav_container {
+        
+        img {
+            width: 20vw;
+            height: 20vw;
+            margin: 80px 0 38px 0;
+        }
+    }
+
+    .nav_row {
+        display: flex;
+        justify-content: space-between;
+        gap: 0;
+
+        a {
+            width: 9.3em;
+            height: 2.75em;
+            font-size: 1em;
+            line-height: 2.75em;
+        }
+    }
+
+    .nav_second_row {
+        justify-content: center;
+    }
+}
