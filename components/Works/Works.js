@@ -22,7 +22,8 @@ export default function Works() {
 
                             // when window width is >= 768
                             768: {
-                                slidesPerView: 6
+                                slidesPerView: 6,
+                                spaceBetween: 18
                             },
 
                             // when window width is >= 1020
@@ -125,12 +126,14 @@ export default function Works() {
                         breakpoints={{
                             // when window width is >= 0
                             0: {
-                                slidesPerView: 3
+                                slidesPerView: 3,
+                                spaceBetween: 10
                             },
 
                             // when window width is >= 768
                             768: {
-                                slidesPerView: 5
+                                slidesPerView: 4,
+                                spaceBetween: 15
                             },
 
                             // when window width is >= 1020
@@ -138,8 +141,8 @@ export default function Works() {
                                 slidesPerView: 5
                             }
                         }}
+                        spaceBetween="auto"
                         slidesPerView="auto"
-                        spaceBetween={10}
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,
@@ -152,7 +155,7 @@ export default function Works() {
                     >
                         <SwiperSlide className={WorksStyles.swiper_slide}>
                             <div>
-                                <Image src='/Poster3.png' fill />
+                                <Image src='/Thumbnail.jpg' fill />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide className={WorksStyles.swiper_slide}>

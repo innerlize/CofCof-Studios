@@ -40,3 +40,14 @@ a {
   font-size: 30px !important;
   color: #F2F2F2;
 }
+
+@media only screen and (min-width: 768px) {
+
+  .swiper-button-prev:after {
+    font-size: 40px !important;
+  }
+  
+  .swiper-button-next:after {
+    font-size: 40px !important;
+  }
+}
