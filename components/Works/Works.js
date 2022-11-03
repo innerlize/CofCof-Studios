@@ -10,7 +10,7 @@ export default function Works() {
     return (
         <section className={WorksStyles.section} id='works'>
             <div className={WorksStyles.poster_container}>
-                <Image src='/Poster3.png' fill />
+                <Image src='/Poster.jpg' fill />
 
                 <div className={WorksStyles.projects_carousel_container}>
                     <Swiper
@@ -106,14 +106,14 @@ export default function Works() {
                         <p>Date</p>
                         <p>
                             10/13/2020
-                              <br />
+                            <br />
                             12/13/2021
                         </p>
                     </div>
 
                     <div>
                         <p>Softwares</p>
-                        <p>3ds Max, Maya, Blender, Nuke</p>
+                        <p className={WorksStyles.softwares}>3ds Max, Maya, Blender, Nuke</p>
                     </div>
                 </div>
 
