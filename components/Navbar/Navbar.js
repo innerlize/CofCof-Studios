@@ -5,7 +5,7 @@ export default function Navbar() {
     return (
         <nav className={NavbarStyles.navbar}>
             <a href='#'>
-                <Image src='/Logo_cofcof.svg' width={55} height={32} />
+                <Image src='/Logo_cofcof.svg' fill />
             </a>
             
             <div className={NavbarStyles.hamburguer}>

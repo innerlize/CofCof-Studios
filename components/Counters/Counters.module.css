@@ -11,7 +11,7 @@
 }
 
 .title span {
-    color: #BD1FBD;
+    color: #15B4E7;
 }
 
 .counter_container {
@@ -61,5 +61,50 @@
     .category {
         font-size: 36px;
         font-weight: 500;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .section {
+        width: 100vw;
+        height: 100vh;
+        padding: 6.618vw 9.485vw;
+    }
+
+    .title {
+        font-size: 2.941vw;
+        margin-bottom: 6.103vw;
+    }
+
+    .all_counters_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4.559vw;
+    }
+
+    .counter_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 23.897vw;
+        height: 23.309vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    .counter_container:nth-child(2) {
+        position: relative;
+        bottom: -2.059vw;
+    }
+
+    .number {
+        font-size: 9.412vw;
+        line-height: 100%;
+        margin: 0;
+    }
+    
+    .category {
+        font-size: 2.353vw;
     }
 }

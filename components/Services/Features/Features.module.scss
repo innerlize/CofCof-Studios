@@ -66,3 +66,45 @@
         line-height: 32px;
     }
 }
+
+
+@media only screen and (min-width: 1280px) {
+    .article {
+        flex-direction: row;
+        gap: 0.735vw;
+    }
+    
+    .feature {
+        position: relative;
+        width: 29.215vw;
+        padding: 2.206vw 2.206vw 4.118vw 2.206vw;
+        bottom: -2.279vw;
+    }
+    
+    .feature:nth-child(2) {
+        width: 29.215vw;
+        padding: 2.206vw;
+        bottom: 0;
+    }
+
+    .article {
+        padding: 0;
+    }
+
+    .feature_image {
+        min-width: 8.971vw;
+        min-height: 8.971vw;
+        margin-top: -4.485vw;
+    }
+
+    .feature_title {
+        font-size: 1.765vw;
+        padding: 0 1.471vw;
+        margin: 2.279vw 0 2.941vw 0;
+    }
+    
+    .feature_desc {
+        font-size: 1.176vw;
+        line-height: 1.884vw;
+    }
+}

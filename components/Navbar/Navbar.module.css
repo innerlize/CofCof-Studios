@@ -11,8 +11,50 @@
     z-index: 10000;
 }
 
+.navbar a {
+    position: relative;
+    width: 55px;
+    height: 32px;
+}
+
 .hamburguer {
     width: 36px;
     height: 18px;
     background-color: red;
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar {
+        height: 85px;
+        padding: 15px 30px;
+    }
+    
+    .navbar a {
+        position: relative;
+        width: 94px;
+        height: 55px;
+    }
+    
+    .hamburguer {
+        width: 50px;
+        height: 25px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .navbar {
+        height: 5.515vw;
+        padding: 1.25vw 3.676vw;
+    }
+    
+    .navbar a {
+        position: relative;
+        width: 5.221vw;
+        height: 3.015vw;
+    }
+    
+    .hamburguer {
+        width: 2.206vw;
+        height: 1.103vw;
+    }
 }

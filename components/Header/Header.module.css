@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0A0A0A;
+}
+
+.header div {
+    position: relative;
+    width: 76vw;
+    height: 100%;
+}
+
+@media only screen and (min-width: 1280px) {
+
+    .header div {
+        width: 40.515vw;
+        height: 30.368vw;
+    }
+}

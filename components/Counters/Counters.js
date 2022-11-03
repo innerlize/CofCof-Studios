@@ -5,7 +5,7 @@ export default function Counters() {
     return (
         <section className={CountersStyles.section}>
             <h3 className={CountersStyles.title}>We never stop <span>creating</span>.</h3>
-            <div>
+            <div className={CountersStyles.all_counters_container}>
                 <div className={CountersStyles.counter_container}>
                     <p className={CountersStyles.number}>47</p>
                     <p className={CountersStyles.category}>Movies</p>

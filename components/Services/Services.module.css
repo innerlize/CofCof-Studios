@@ -8,3 +8,9 @@
         padding: 120px 92px;
     }
 }
+
+@media only screen and (min-width: 1280px) {
+    .section {
+        padding: 10.147vw 5.441vw 10.074vw 5.441vw;
+    }
+}
