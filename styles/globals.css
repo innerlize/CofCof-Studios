@@ -61,4 +61,12 @@ a {
   .swiper-button-next {
     right: 0 !important;
   }
+
+  .swiper-button-prev:after {
+    font-size: 2.206vw !important;
+  }
+  
+  .swiper-button-next:after {
+    font-size: 2.206vw !important;
+  }
 }

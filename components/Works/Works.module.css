@@ -20,18 +20,35 @@
     background-color: rgba(10, 10, 10, 0.8);
 }
 
+.projects_carousel_container p {
+    display: none;
+    position: absolute;
+    top: -2.5vw;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    background-color: #0A0A0A;
+    font-size: 1.029vw;
+    letter-spacing: 0.147vw;
+    padding: 0.735vw 0;
+    font-weight: 700;
+    text-align: center;
+}
+
 .swiper {
     padding: 5px 50px;
 }
 
 .swiper_slide {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.swiper_slide div {
     position: relative;
     width: 50px;
     height: 50px;
     margin: auto;
-    border-radius: 10px;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
 }
 
 .swiper_slide img {
@@ -109,6 +126,7 @@
 
 .swiper_gallery_slide img {
     border-radius: 3px;
+    object-fit: cover;
 }
 
 @media only screen and (min-width: 768px) {
@@ -127,7 +145,7 @@
         padding: 11px 69px;
     }
 
-    .swiper_slide {
+    .swiper_slide div {
         position: relative;
         width: 72px;
         height: 72px;
@@ -205,11 +223,15 @@
         padding: 0.882vw 2.353vw;
     }
 
+    .projects_carousel_container p {
+        display: block;
+    }
+
     .swiper {
         padding: 0 3.897vw;
     }
 
-    .projects_carousel_container .swiper_slide {
+    .swiper_slide div {
         width: 4.044vw !important;
         height: 4.044vw !important;
     }
@@ -265,5 +287,22 @@
     .video {
         height: 35.662vw;
         margin-bottom: 2.794vw;
+    }
+
+    .project_images_carousel_container {
+        padding: 0 1.765vw;
+    }
+
+    .swiper_gallery {
+        padding: 0 4.191vw;
+    }
+
+    .swiper_gallery_slide div {
+        width: 10.809vw !important;
+        height: 6.029vw !important;
+    }
+
+    .swiper_gallery_slide div img {
+        border-radius: 10px;
     }
 }
