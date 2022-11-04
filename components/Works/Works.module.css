@@ -6,7 +6,7 @@
 .poster_container {
     position: relative;
     width: 100%;
-    height: 37%;
+    height: 45%;
 }
 
 .poster_container img {
@@ -25,21 +25,22 @@
 }
 
 .swiper_slide {
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
-}
-
-.swiper_slide div {
     position: relative;
     width: 50px;
     height: 50px;
     margin: auto;
     border-radius: 10px;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.swiper_slide img {
+    object-fit: cover;
 }
 
 .info_container {
     position: relative;
-    height: 63%;
+    height: 55%;
     padding: 0 35px 40px 35px;
     color: #F2F2F2;
     background-color: #0A0A0A;
@@ -126,13 +127,13 @@
         padding: 11px 69px;
     }
 
-    .swiper_slide div {
+    .swiper_slide {
         position: relative;
         width: 72px;
         height: 72px;
     }
 
-    .swiper_slide div img {
+    .swiper_slide img {
         border-radius: 10px;
     }
 
@@ -190,31 +191,27 @@
     .section {
         display: flex;
         height: 100vh;
-    }
-
-    .projects_carousel_container {
-        padding: 0 2.353vw;
+        background-color: #0A0A0A;
     }
 
     .poster_container {
         position: relative;
         width: 35.294vw;
         height: 100%;
+        box-shadow: 6px 0 30px #000000;
     }
 
-    .swiper {
-        height: 5.882vw;
+    .projects_carousel_container {
         padding: 0.882vw 2.353vw;
     }
 
-    .swiper_slide div {
-        position: relative;
-        width: 4.044vw;
-        height: 4.044vw;
+    .swiper {
+        padding: 0 3.897vw;
     }
 
-    .swiper_slide div img {
-        border-radius: 10px;
+    .projects_carousel_container .swiper_slide {
+        width: 4.044vw !important;
+        height: 4.044vw !important;
     }
 
     .info_container {
@@ -222,6 +219,7 @@
         width: 64.706vw;
         height: 100%;
         padding: 3.309vw 2.574vw;
+        background-color: initial;
     }
 
     .info_container::-webkit-scrollbar {
@@ -267,9 +265,5 @@
     .video {
         height: 35.662vw;
         margin-bottom: 2.794vw;
-    }
-    
-    .swiper_gallery {
-        padding: 5px 64px;
     }
 }
