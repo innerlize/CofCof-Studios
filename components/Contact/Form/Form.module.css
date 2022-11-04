@@ -10,7 +10,7 @@
     font-weight: 300;
     font-family: Montserrat, sans-serif;
     color: #F2F2F2;
-    padding: 9px 9px 9px 0;
+    padding: 9px 0;
     border: none;
     background-color: transparent;
     border-bottom: 2px solid rgba(242, 242, 242, 1);
@@ -49,6 +49,7 @@
     margin-top: 46px;
     border: none;
     border-radius: 3px;
+    cursor: pointer;
     background-color: #F2F2F2;
     transition: all .3s ease-in-out;
 }
@@ -93,7 +94,7 @@
     .form input,
     .form textarea {
         font-size: 16px;
-        padding: 10px 10px 10px 0;
+        padding: 10px 0;
     }
 
     .form textarea {
@@ -104,5 +105,33 @@
         font-size: 24px;
         padding: 16px 0;
         margin-top: 60px;
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    .form {
+        margin: 5.882vw 0 0 0;
+    }
+
+    .mail {
+        margin: 3.676vw 0;
+    }
+
+    .form input,
+    .form textarea {
+        font-size: 1.029vw;
+        padding: 0.882vw 0;
+    }
+
+    .form textarea {
+        height: 8.088vw;
+    }
+
+    .form button {
+        font-size: 1.765vw;
+        padding: 1.176vw 0;
+        margin-top: 4.412vw;
     }
 }

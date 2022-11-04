@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-import WorksStyles from './Works.module.css';
+import WorksStyles from './Works.module.scss';
 
 
 export default function Works() {
@@ -188,10 +188,14 @@ export default function Works() {
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                                <Image src='/Poster3.png' fill />
+                                <div>
+                                    <Image src='/Poster3.png' fill />
+                                </div>
                             </SwiperSlide>
                             <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                                <Image src='/Poster3.png' fill />
+                                <div>
+                                    <Image src='/Poster3.png' fill />
+                                </div>
                             </SwiperSlide>
                         </Swiper>
                     </div>

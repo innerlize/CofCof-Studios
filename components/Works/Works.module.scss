@@ -40,6 +40,8 @@
 }
 
 .swiper_slide {
+    display: flex;
+    justify-content: center;
     opacity: 0;
     transition: opacity .3s ease-in-out;
 }
@@ -53,6 +55,11 @@
 
 .swiper_slide img {
     object-fit: cover;
+    transition: all .3s ease-in-out;
+    
+    &:hover {
+        filter: invert(100%)
+    }
 }
 
 .info_container {
@@ -119,14 +126,27 @@
 }
 
 .swiper_gallery_slide {
+    display: flex;
+    justify-content: center;
     opacity: 0;
     box-shadow: 0 6px 10px #000000;
     transition: opacity .3s ease-in-out;
 }
 
+.swiper_gallery_slide div {
+    position: relative;
+    width: 67px;
+    height: 38px;
+}
+
 .swiper_gallery_slide img {
     border-radius: 3px;
     object-fit: cover;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        filter: invert(100%)
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -197,9 +217,10 @@
     .video {
         margin-bottom: 30px;
     }
-    
-    .swiper_gallery {
-        padding: 5px 64px;
+
+    .swiper_gallery_slide div {
+        width: 112px;
+        height: 62px;
     }
 }
 

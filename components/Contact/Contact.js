@@ -44,11 +44,14 @@ export default function Contact() {
 
                 <hr />
 
-                <div className={ContactStyles.social_media_container}>
-                    <div><a><Image src='/LinkedIn.svg' fill /></a></div>
-                    <div><a><Image src='/Instagram.svg' fill /></a></div>
-                    <div><a><Image src='/Twitter.svg' fill /></a></div>
-                    <div><a><Image src='/Facebook.svg' fill /></a></div>
+                <div className={ContactStyles.social}>
+                    <h4>Follow us! ;)</h4>
+                    <div className={ContactStyles.social_media_container}>
+                        <div><a><Image src='/LinkedIn.svg' fill /></a></div>
+                        <div><a><Image src='/Instagram.svg' fill /></a></div>
+                        <div><a><Image src='/Twitter.svg' fill /></a></div>
+                        <div><a><Image src='/Facebook.svg' fill /></a></div>
+                    </div>
                 </div>
             </div>
         </section>

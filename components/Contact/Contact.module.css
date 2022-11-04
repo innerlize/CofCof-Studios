@@ -18,6 +18,7 @@
     flex-direction: column;
     align-items: center;
     font-size: 15px;
+    font-weight: 500;
     gap: 27px;
     padding: 35px 16px;
     border-radius: 10px 10px 0 0;
@@ -60,6 +61,12 @@
 .footer hr {
     width: 100%;
     opacity: .2;
+}
+
+.social h4 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .social_media_container {
@@ -119,6 +126,12 @@
     .extra_contact_info_container:nth-child(2) {
         margin: 20px 0;
     }
+
+    .social h4 {
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
     
     .social_media_container {
         gap: 30px;
@@ -127,5 +140,69 @@
     .social_media_container div {
         width: 42px;
         height: 42px;
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    .section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10.294vw;
+        height: 100vh;
+        padding: 0;
+        background-color: #0A0A0A;
+        text-align: center;
+    }
+
+    .section h3 {
+        font-size: 2.941vw;
+        letter-spacing: 0.221vw;
+    }
+
+    .footer {
+        font-size: 1.176vw;
+        gap: 1.838vw;
+        padding: 2.206vw 2.5vw;
+        align-self: flex-end;
+    }
+
+    .logo {
+        width: 8.088vw;
+        height: 4.853vw;
+    }
+
+    .map {
+        width: 24.853vw;
+        height: 13.676vw;
+    }
+
+    .extra_contact_info_container {
+        gap: 1.103vw;
+    }
+
+    .extra_contact_info_container div {
+        width: 2.353vw;
+        height: 2.353vw;
+    }
+    
+    .extra_contact_info_container:nth-child(2) {
+        margin: 0.882vw 0;
+    }
+
+    .social h4 {
+        font-size: 1.176vw;
+        margin-bottom: 1.471vw;
+    }
+    
+    .social_media_container {
+        gap: 30px;
+    }
+
+    .social_media_container div {
+        width: 2.353vw;
+        height: 2.353vw;
     }
 }
