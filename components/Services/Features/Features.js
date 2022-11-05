@@ -7,7 +7,7 @@ export default function Features() {
             <div className={FeaturesStyle.feature}>
                 <div className={FeaturesStyle.feature_image}></div>
                 <h4 className={FeaturesStyle.feature_title}>ALWAYS AT YOUR <br /> SIDE</h4>
-                <p className={FeaturesStyle.feature_desc}>We adapt to different pipelines and this makes it easier for us to enter our partners' processes and vice versa, minimizing errors, ensuring efficient production. We cover complete pre-production and production cycles.</p>
+                <p className={FeaturesStyle.feature_desc}>We adapt to different pipelines and this makes it easier for us to enter our partners&apos; processes and vice versa, minimizing errors, ensuring efficient production. We cover complete pre-production and production cycles.</p>
             </div>
 
             <div className={FeaturesStyle.feature}>
