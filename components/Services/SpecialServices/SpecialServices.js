@@ -1,5 +1,4 @@
 import SpecialServicesStyles from './SpecialServices.module.scss';
-import Image from 'next/image';
 
 
 export default function SpecialServices() {
@@ -20,7 +19,7 @@ export default function SpecialServices() {
                     </p>
                 </div>
                 <div className={SpecialServicesStyles.gif_container}>
-                    <Image className={SpecialServicesStyles.gif} src='/SpecialServices_Gifs/Rigging.gif' fill />
+                    <video className={SpecialServicesStyles.gif} src='/Rigging_Avanzado.mp4' autoPlay muted loop />
                 </div>
             </div>
             <div className={SpecialServicesStyles.service_container}>
@@ -36,7 +35,7 @@ export default function SpecialServices() {
                     </p>
                 </div>
                 <div className={SpecialServicesStyles.gif_container}>
-                    <Image className={SpecialServicesStyles.gif} src='/SpecialServices_Gifs/Pipeline.gif' fill />
+                    <video className={SpecialServicesStyles.gif} src='/Pipeline_DccTools.mp4' autoPlay muted loop />
                 </div>
             </div>
             <div className={SpecialServicesStyles.service_container}>
@@ -46,7 +45,7 @@ export default function SpecialServices() {
                     <p className={SpecialServicesStyles.desc}>CofCof Studios will completely take care of all the processes and complements of the production of your game or movie, including organic characters, inorganic objects, elements of a scene or modular levels, a whole cycle from contextual description, concept art, 3D modeling high and low poly, uv (simple or UDIM), textures (all necessary passes), materials, shading, file order (naming, scaling, optimizations), variations, different formats, compatibility with different 3D programs or graphic engines.</p>
                 </div>
                 <div className={SpecialServicesStyles.gif_container}>
-                    <Image className={SpecialServicesStyles.gif} src='/SpecialServices_Gifs/3DAssets.gif' fill />
+                    <video className={SpecialServicesStyles.gif} src='/Complete_Assets.mp4' autoPlay muted loop />
                 </div>
             </div>
             <div className={SpecialServicesStyles.service_container}>
@@ -61,7 +60,7 @@ export default function SpecialServices() {
                     </p>
                 </div>
                 <div className={SpecialServicesStyles.gif_container}>
-                    <Image className={SpecialServicesStyles.gif} src='/SpecialServices_Gifs/VFX.gif' fill />
+                    <video className={SpecialServicesStyles.gif} src='/VFX.mp4' autoPlay muted loop />
                 </div>
             </div>
         </article>
