@@ -7,7 +7,7 @@ export default function SpecialServices() {
             <div className={SpecialServicesStyles.service_container}>
                 <div>
                     <h3 className={SpecialServicesStyles.title}>ADVANCED RIGGING</h3>
-                    <p className={SpecialServicesStyles.question}>What does good rigging solve? How to animate a 3D asset?</p>
+                    <p className={SpecialServicesStyles.question}>How to animate a 3D asset? What does good rigging solve?</p>
                     <p className={SpecialServicesStyles.desc}>
                         We approach a good rig from pre-production, solving many of the future problems in production and guaranteeing consistency in animation.
                         <br />
@@ -51,7 +51,7 @@ export default function SpecialServices() {
             <div className={SpecialServicesStyles.service_container}>
                 <div>
                     <h3 className={SpecialServicesStyles.title}>VFX / REAL-TIME</h3>
-                    <p className={SpecialServicesStyles.question}>Do you want more realism in your scenes or 3D assets, do you want to create magic where there is none?</p>
+                    <p className={SpecialServicesStyles.question}>Do you want more realism in your scenes or 3D assets? Do you want to create magic where there is none?</p>
                     <p className={SpecialServicesStyles.desc}>
                         We create components with mixed techniques, particles, fluids, smoke, destruction, explosions, water simulation, fire, clothing simulation, and more.
                         <br />
