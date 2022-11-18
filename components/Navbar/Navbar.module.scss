@@ -86,8 +86,8 @@
 }
 
 .activated_hamburguer div:nth-child(2) {
-    transform: translateX(100%);
-    opacity: 0;
+    width: 0% !important;
+    transition: width .1s ease-in-out;
 }
 
 .activated_hamburguer div:nth-child(3) {

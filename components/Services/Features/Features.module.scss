@@ -1,7 +1,7 @@
 .article {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 112px;
 }
 
 .feature {
@@ -19,6 +19,7 @@
 .feature_image {
     width: 122px;
     height: 122px;
+    margin-top: -62px;
     background-color: #15B4E7;
     border: 2px solid #F2F2F2;
     border-radius: 50%;
@@ -29,6 +30,10 @@
     font-size: 24px;
     font-weight: 700;
     margin: 30px 0;
+}
+
+.feature:nth-child(3) .feature_title {
+    padding: 0 40px;
 }
 
 .feature_desc {
@@ -50,15 +55,24 @@
 @media only screen and (min-width: 768px) {
     .article {
         padding: 0 60px;
+        gap: 122px;
     }
 
     .feature {
         padding: 48px;
     }
 
+    .feature_image {
+        margin-top: -82px;
+    }
+
     .feature_title {
         font-size: 26px;
         margin: 40px 0;
+    }
+
+    .feature:nth-child(3) .feature_title {
+        padding: 0 5px;
     }
     
     .feature_desc {
@@ -102,6 +116,10 @@
         font-size: 1.765vw;
         padding: 0 1.471vw;
         margin: 2.279vw 0 2.941vw 0;
+    }
+
+    .feature:nth-child(3) .feature_title {
+        padding: 0 5px;
     }
     
     .feature_desc {
