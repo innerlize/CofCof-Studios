@@ -69,6 +69,8 @@
 .nav_links_container a {
     font-weight: 500;
     padding: 5px;
+    background-color: #0A0A0A;
+    border-radius: 3px;
     transition: all .2s ease-in-out;
 
     &:hover {
