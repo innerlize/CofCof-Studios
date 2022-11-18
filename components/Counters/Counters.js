@@ -73,7 +73,7 @@ export default function Counters() {
     const [counterProjects, setCounterProjects] = useState();
     const [counterMovies, setCounterMovies] = useState();
     const [counterGames, setCounterGames] = useState();
-    const [counterOthers, setCounterOthers] = useState();
+    const [counterOthers, setCounterOthers] = useState()
 
 
     useEffect(() => {
