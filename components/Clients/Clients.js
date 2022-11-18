@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/Image';
+import Image from 'next/image';
 import axios from 'axios';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
