@@ -79,8 +79,8 @@ export default function Clients() {
                     {
                         logos.map(logo => {
                             return (
-                                <SwiperSlide>
-                                    <Image src={`https://${logo.link_media}`} width={60} height={60} alt="logo" key={logo.link_media} />
+                                <SwiperSlide key={logo.link_media}>
+                                    <Image src={`https://${logo.link_media}`} width={60} height={60} alt="logo" />
                                 </SwiperSlide>
                             )
                         })
@@ -118,8 +118,8 @@ export default function Clients() {
                     {
                         logos.map(logo => {
                             return (
-                                <SwiperSlide>
-                                    <Image src={`https://${logo.link_media}`} width={60} height={60} alt="logo" key={logo.link_media} />
+                                <SwiperSlide key={logo.link_media}>
+                                    <Image src={`https://${logo.link_media}`} width={60} height={60} alt="logo" />
                                 </SwiperSlide>
                             )
                         })
