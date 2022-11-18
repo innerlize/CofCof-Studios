@@ -3,7 +3,7 @@ import FeaturesStyle from './Features.module.scss';
 
 export default function Features() {
     return (
-        <article className={FeaturesStyle.article}>
+        <article id='features' className={FeaturesStyle.article}>
             <div className={FeaturesStyle.feature}>
                 <div className={FeaturesStyle.feature_image}></div>
                 <h4 className={FeaturesStyle.feature_title}>ALWAYS AT YOUR <br /> SIDE</h4>

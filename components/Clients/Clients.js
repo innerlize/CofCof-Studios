@@ -1,11 +1,45 @@
-import Image from 'next/image';
+import React, { useState, useEffect } from 'react';
+import Image from 'next/Image';
+import axios from 'axios';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import "swiper/css";
 import ClientsStyles from './Clients.module.scss';
 
 
+function objToArrayLogos(logos) {
+
+    let newLogosArray = [];
+
+    for (let property in logos) {
+        newLogosArray.push((logos[property]));
+    }
+
+    return newLogosArray;
+}
+
 export default function Clients() {
+
+    const [logos, setLogos] = useState([]);
+
+
+    useEffect(() => {
+        const getLogos = async () => {
+            try {
+                const { data: logos} = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/logos.json${process.env.NEXT_PUBLIC_API_KEY}`);
+
+                setLogos(objToArrayLogos(logos))
+            }
+
+            catch (error) {
+                console.log('Error! D:')
+            }
+        }
+
+        getLogos();
+    }, [])
+
+
     return (
         <section className={ClientsStyles.section}>
             <div className={ClientsStyles.container}>
@@ -42,33 +76,15 @@ export default function Clients() {
                     loop={true}
                     style={{marginBottom: '40px'}}
                 >
-                    <SwiperSlide>
-                        <Image src='/Logo1.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo2.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo3.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo4.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo5.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo6.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo7.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo8.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo9.png' width={60} height={60} />
-                    </SwiperSlide>
+                    {
+                        logos.map(logo => {
+                            return (
+                                <SwiperSlide>
+                                    <Image src={`https://${logo.link_media}`} width={60} height={60} alt="logo" />
+                                </SwiperSlide>
+                            )
+                        })
+                    }
                 </Swiper>
 
                 <Swiper
@@ -99,33 +115,15 @@ export default function Clients() {
                     loop={true}
                     dir="rtl"
                 >
-                    <SwiperSlide>
-                        <Image src='/Logo3.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo1.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo4.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo6.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo2.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo8.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo5.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo9.png' width={60} height={60} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src='/Logo7.png' width={60} height={60} />
-                    </SwiperSlide>
+                    {
+                        logos.map(logo => {
+                            return (
+                                <SwiperSlide>
+                                    <Image src={`https://${logo.link_media}`} width={60} height={60} alt="logo" />
+                                </SwiperSlide>
+                            )
+                        })
+                    }
                 </Swiper>
             </div>
         </section>
