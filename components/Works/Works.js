@@ -108,7 +108,6 @@ export default function Works() {
 
                 setCheckedProjects(getCheckedProjects(CofcofProjects));
                 setProjectsCovers(getProjectsCovers(covers));
-                setBigCover(`https://${getFirstProjectCover(getProjectsCovers(covers), getCheckedProjects(CofcofProjects))}`);
                 setProjectData(getProjectData(projectName, projectsData));
                 setProjectEmbed(getProjectEmbed(getProjectData(projectName, projectsData)));
                 // setProjectData(getProjectData(getFirstProjectName(getCheckedProjects(CofcofProjects)), projectsData));
@@ -168,7 +167,7 @@ export default function Works() {
                                 return projectsCovers.map(cover => {
                                     if(cover.nombre_proyecto === Object.values(project)[0].nombre_proyecto) {
                                         return (
-                                            <SwiperSlide onClick={(e) => setProjectName(cover.nombre_proyecto)} className={WorksStyles.swiper_slide} key={project.nombre}>
+                                            <SwiperSlide onClick={(e) => {setProjectName(cover.nombre_proyecto); setBigCover(`https://${cover.link_media}`)}} className={WorksStyles.swiper_slide} key={project.nombre}>
                                                 <div>
                                                     <Image onClick={(e) => setProjectMedia([])} src={`https://${cover.link_media}`} fill alt="image" sizes="(max-width: 768px) 100vw,
                       (max-width: 1200px) 50vw,
