@@ -317,7 +317,7 @@ export default function Works() {
                             ?
 
                         projectMedia.map(media => {
-                            return media.cofcof === true && media.tipo === 'video' ? <video controls className={WorksStyles.video} src={`https://${media.link_media}`} /> : null
+                            return media.cofcof === true && media.tipo === 'video' ? <video className={WorksStyles.video} src={`https://${media.link_media}`} controls /> : null
                         })
 
                             :
