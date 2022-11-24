@@ -93,6 +93,8 @@ export default function Works() {
     const [projectData, setProjectData] = useState();
     const [projectEmbed, setProjectEmbed] = useState('');
     const [projectMedia, setProjectMedia] = useState([]);
+    const [demoViewer, setDemoViewer] = useState(false);
+    const [imageView, setImaveView] = useState('');
     const [bigCover, setBigCover] = useState('');
 
 
@@ -124,6 +126,7 @@ export default function Works() {
 
     return (
         <section className={WorksStyles.section} id='works'>
+
             <div className={WorksStyles.poster_container}>
                 <Image src={bigCover} fill alt='cover' sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
@@ -167,7 +170,7 @@ export default function Works() {
                                         return (
                                             <SwiperSlide onClick={(e) => setProjectName(cover.nombre_proyecto)} className={WorksStyles.swiper_slide} key={project.nombre}>
                                                 <div>
-                                                    <Image src={`https://${cover.link_media}`} fill alt="image" sizes="(max-width: 768px) 100vw,
+                                                    <Image onClick={(e) => setProjectMedia([])} src={`https://${cover.link_media}`} fill alt="image" sizes="(max-width: 768px) 100vw,
                       (max-width: 1200px) 50vw,
                       33vw" />
                                                 </div>
@@ -248,15 +251,17 @@ export default function Works() {
                                     ?
                                 
                                 projectMedia.map(media => {
-                                    return (
-                                        <SwiperSlide className={WorksStyles.swiper_gallery_slide} key={media.nombre_proyecto}>
-                                            <div>
-                                                <Image src={`https://${media.link_media}`} fill alt='project image demo' sizes="(max-width: 768px) 100vw,
-                      (max-width: 1200px) 50vw,
-                      33vw" />
-                                            </div>
-                                        </SwiperSlide>
-                                    )
+                                    if (media.cofcof === true) {
+                                        return (
+                                            <SwiperSlide className={WorksStyles.swiper_gallery_slide} key={media.nombre_proyecto}>
+                                                <div onClick={(e) => setDemoViewer(!demoViewer)}>
+                                                    <Image src={`https://${media.link_media}`} onClick={(e) => setImaveView(`https://${media.link_media}`)} fill alt='project image demo' sizes="(max-width: 768px) 100vw,
+                          (max-width: 1200px) 50vw,
+                          33vw" />
+                                                </div>
+                                            </SwiperSlide>
+                                        )
+                                    }
                                 })
 
                                 :
@@ -265,6 +270,13 @@ export default function Works() {
                             }
                         </Swiper>
                     </div>
+                </div>
+            </div>
+
+            
+            <div className={demoViewer ? [WorksStyles.image_view_container, WorksStyles.activated].join(" ") : WorksStyles.image_view_container} onClick={(e) => setDemoViewer(!demoViewer)}>
+                <div>
+                    <Image className={WorksStyles.image_view} src={imageView} fill alt='image demo view' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
             </div>
         </section>
