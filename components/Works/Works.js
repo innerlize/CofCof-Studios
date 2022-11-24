@@ -249,7 +249,7 @@ export default function Works() {
                                 
                                 projectMedia.map(media => {
                                     return (
-                                        <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
+                                        <SwiperSlide className={WorksStyles.swiper_gallery_slide} key={media.nombre_proyecto}>
                                             <div>
                                                 <Image src={`https://${media.link_media}`} fill alt='project image demo' sizes="(max-width: 768px) 100vw,
                       (max-width: 1200px) 50vw,
