@@ -84,6 +84,12 @@ function getProjectMedia(projectName, projectMedia) {
     return media;
 }
 
+function getDataVerification(projectData) {
+    let data = Object.values(projectData)[0].cofcof
+
+    return data;
+}
+
 function scrollToTop(element) {
     element.scrollTo(0, 0);
 }
@@ -97,6 +103,7 @@ export default function Works() {
     const [projectName, setProjectName] = useState('');
     const [projectData, setProjectData] = useState();
     const [projectEmbed, setProjectEmbed] = useState('');
+    const [dataVerification, setDataVerification] = useState([]);
     const [projectMedia, setProjectMedia] = useState([]);
     const [demoViewer, setDemoViewer] = useState(false);
     const [imageView, setImaveView] = useState('');
@@ -119,7 +126,8 @@ export default function Works() {
                 setProjectData(getProjectData(firstName, projectsData));
                 setProjectEmbed(getProjectEmbed(getProjectData(firstName, projectsData)));
                 setProjectMedia(getProjectMedia(firstName, projectsMedia));
-                setBigCover(`https://${getFirstProjectCover(getProjectsCovers(covers), getCheckedProjects(CofcofProjects))}`)
+                setDataVerification(getDataVerification(getProjectData(firstName, projectsData)));
+                setBigCover(`https://${getFirstProjectCover(getProjectsCovers(covers), getCheckedProjects(CofcofProjects))}`);
             }
 
             catch (error) {
@@ -156,12 +164,13 @@ export default function Works() {
     }, [projectName])
 
 
-
     if (!showChild) {
         return null;
     }
 
+
     const infoContainer = document.getElementById('info_container');
+
 
     return (
         <section className={WorksStyles.section} id='works'>
@@ -227,30 +236,95 @@ export default function Works() {
                 {projectData ? <h4>{Object.values(projectData)[0].nombre_proyecto_mostrar}</h4> : null}
 
                 <div className={WorksStyles.init_info_container}>
-                    <div>
-                        <p>Client</p>
-                        {projectData ? <p>{Object.values(projectData)[0].cliente}</p> : null}
-                    </div>
+                    {
+                        projectData && dataVerification.includes('cliente')
 
-                    <div>
-                        <p>Date</p>
-                        <p>
-                            {projectData ? Object.values(projectData)[0].fecha_inicio : null}
-                            <br />
-                            {projectData ? Object.values(projectData)[0].fecha_fin : null}
-                        </p>
-                    </div>
+                            ?
 
-                    <div>
-                        <p>Softwares</p>
-                        {projectData ? <p>{Object.values(projectData)[0].software}</p> : null}
-                    </div>
+                        <div>
+                            <p>Client</p>
+                            <p>{Object.values(projectData)[0].cliente}</p>
+                        </div>
+
+                            :
+
+                        null
+                    }
+                    
+                    {
+                        projectData && dataVerification.includes('fechas')
+
+                            ?
+
+                        <div>
+                            <p>Date</p>
+                            <p>
+                                {Object.values(projectData)[0].fecha_inicio}
+                                <br />
+                                {Object.values(projectData)[0].fecha_fin}
+                            </p>
+                        </div>
+
+                            :
+
+                        null
+                    }
+                    
+                    {
+                        projectData && dataVerification.includes('software')
+
+                            ?
+
+                        <div>
+                            <p>Softwares</p>
+                            <p>{Object.values(projectData)[0].software}</p>
+                        </div>
+
+                            :
+
+                        null
+                    }
                 </div>
+                    
+                    {
+                        projectData && dataVerification.includes('descripcion')
 
-                <p className={WorksStyles.desc}>{projectData ? Object.values(projectData)[0].descripcion : null}</p>
+                            ?
+
+                        <p className={WorksStyles.desc}>{Object.values(projectData)[0].descripcion}</p>
+
+                            :
+
+                        null
+                    }
 
                 <div>
-                    {projectEmbed ? <div className={WorksStyles.video} dangerouslySetInnerHTML={{ __html: projectEmbed }}></div> : null}
+                    {
+                        projectEmbed && dataVerification.includes('embebido')
+
+                            ?
+
+                        <div className={WorksStyles.video} dangerouslySetInnerHTML={{ __html: projectEmbed }}></div>
+
+                            :
+
+                        null
+                    }
+
+                    {
+                        projectMedia && !projectEmbed || !dataVerification.includes('embebido')
+
+                            ?
+
+                        projectMedia.map(media => {
+                            return media.cofcof === true && media.tipo === 'video' ? <video controls className={WorksStyles.video} src={`https://${media.link_media}`} /> : null
+                        })
+
+                            :
+
+                        null
+                    }
+                    
 
                     <div className={WorksStyles.project_images_carousel_container}>
                         <Swiper
@@ -286,7 +360,7 @@ export default function Works() {
                                     ?
 
                                     projectMedia.map(media => {
-                                        if (media.cofcof === true) {
+                                        if (media.cofcof === true && media.tipo === 'imagen') {
                                             return (
                                                 <SwiperSlide className={WorksStyles.swiper_gallery_slide} key={media.nombre_proyecto}>
                                                     <div onClick={(e) => setDemoViewer(!demoViewer)}>
