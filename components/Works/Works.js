@@ -9,7 +9,7 @@ import WorksStyles from './Works.module.scss';
 
 
 function getCheckedProjects(projects) {
-    // Controlar mejor los const
+
     const cofcofProjects = projects.cofcof;
 
     let allCofCofProjects = [];
@@ -30,33 +30,99 @@ function getCheckedProjects(projects) {
     return checkedCofCofProjects;
 }
 
+function getProjectsCovers(covers) {
+
+    const projectsCovers = [];
+
+    for (let property in covers) {
+        projectsCovers.push((covers[property]));
+    }
+
+    return projectsCovers;
+}
+
+function getFirstProjectCover(covers, projects) {
+    let firstCover = covers.find(cover => cover.nombre_proyecto === Object.values(projects[0])[0].nombre_proyecto)
+
+    return firstCover.link_media;
+}
+
+function getFirstProjectName(projects) {
+    let firstProjectName = Object.values(projects[0])[0].nombre_proyecto;
+
+    return firstProjectName;
+}
+
+function getProjectData(projectName, projectsData) {
+    const projects = [];
+
+    for (let property in projectsData) {
+        projects.push((projectsData[property]))
+    }
+
+    let data = projects.find(project => Object.values(project)[0].nombre_proyecto === projectName);
+    
+    return data;
+}
+
+function getProjectEmbed(projectData) {
+
+    let embed = Object.values(projectData)[0].embebido;
+    
+    return embed;
+}
+
+function getProjectMedia(projectData) {
+
+    let embed = Object.values(projectData)[0].embebido;
+    
+    return embed;
+}
+
 
 export default function Works() {
 
     const [checkedProjects, setCheckedProjects] = useState([]);
+    const [projectsCovers, setProjectsCovers] = useState([]);
+    const [projectName, setProjectName] = useState('');
+    const [projectData, setProjectData] = useState();
+    const [projectEmbed, setProjectEmbed] = useState('');
+    const [projectMedia, setProjectMedia] = useState('');
+    const [bigCover, setBigCover] = useState('');
 
 
     useEffect(() => {
         const getProjects = async () => {
             try {
-                const { data: projects } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/pagina_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
+                const { data: projectsData } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/proyectos.json${process.env.NEXT_PUBLIC_API_KEY}`);
+                const { data: projectsMedia } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/media_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
+                const { data: CofcofProjects } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/pagina_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
+                const { data: covers } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/portada_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
 
-                setCheckedProjects(getCheckedProjects(projects))
+                setCheckedProjects(getCheckedProjects(CofcofProjects));
+                setProjectsCovers(getProjectsCovers(covers));
+                setBigCover(`https://${getFirstProjectCover(getProjectsCovers(covers), getCheckedProjects(CofcofProjects))}`);
+                setProjectName(projectName);
+                setProjectData(getProjectData(projectName, projectsData));
+                setProjectEmbed(getProjectEmbed(getProjectData(projectName, projectsData)));
+                // setProjectData(getProjectData(getFirstProjectName(getCheckedProjects(CofcofProjects)), projectsData));
             }
 
             catch (error) {
-                console.log('Error! D:')
+                console.log('Error! D:', error);
             }
         }
 
         getProjects();
-    }, [])
+    }, [projectName])
+
+    console.log(projectEmbed)
 
 
     return (
         <section className={WorksStyles.section} id='works'>
             <div className={WorksStyles.poster_container}>
-                <Image src='/Poster2.webp' fill sizes="(max-width: 768px) 100vw,
+                <Image src={bigCover} fill alt='cover' sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
 
@@ -93,16 +159,20 @@ export default function Works() {
                     >
                         {
                             checkedProjects.map(project => {
-                                return (
-                                    <SwiperSlide className={WorksStyles.swiper_slide} key={project.nombre}>
-                                        <div>
-                                            <Image src='/Poster3.png' fill alt="image" sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" />
-                                        </div>
-                                    </SwiperSlide>
-                                )
-                            })
+                                return projectsCovers.map(cover => {
+                                    if(cover.nombre_proyecto === Object.values(project)[0].nombre_proyecto) {
+                                        return (
+                                            <SwiperSlide onClick={(e) => setProjectName(cover.nombre_proyecto)} className={WorksStyles.swiper_slide} key={project.nombre}>
+                                                <div>
+                                                    <Image src={`https://${cover.link_media}`} fill alt="image" sizes="(max-width: 768px) 100vw,
+                      (max-width: 1200px) 50vw,
+                      33vw" />
+                                                </div>
+                                            </SwiperSlide>
+                                        )
+                                    }
+                                    })
+                                })
                         }
                     </Swiper>
                 </div>
@@ -111,33 +181,34 @@ export default function Works() {
             <div className={WorksStyles.info_container}>
                 <div className={WorksStyles.pad}></div>
 
-                <h4>Spider-Man: No Way Home</h4>
+                {projectData ? <h4>{Object.values(projectData)[0].nombre_proyecto_mostrar}</h4> : null}
+                {/* <h4>Spider-Man: No Way Home</h4> */}
 
                 <div className={WorksStyles.init_info_container}>
                     <div>
                         <p>Client</p>
-                        <p>Marvel Studios</p>
+                        {projectData ? <p>{Object.values(projectData)[0].cliente}</p> : null}
                     </div>
 
                     <div>
                         <p>Date</p>
                         <p>
-                            10/13/2020
+                            {projectData ? Object.values(projectData)[0].fecha_inicio : null}
                             <br />
-                            12/13/2021
+                            {projectData ? Object.values(projectData)[0].fecha_fin : null}
                         </p>
                     </div>
 
                     <div>
                         <p>Softwares</p>
-                        <p className={WorksStyles.softwares}>3ds Max, Maya, Blender, Nuke</p>
+                        {projectData ? <p>{Object.values(projectData)[0].software}</p> : null}
                     </div>
                 </div>
 
-                <p className={WorksStyles.desc}>With Spider-Man&apos;s identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man. <br /> <br /> Peter Parker&apos;s secret identity is revealed to the entire world. Desperate for help, Peter turns to Doctor Strange to make the world forget that he is Spider-Man. The spell goes horribly wrong and shatters the multiverse, bringing in monstrous villains that could destroy the world.</p>
+                <p className={WorksStyles.desc}>{projectData ? Object.values(projectData)[0].descripcion : null}</p>
 
                 <div>
-                    <iframe className={WorksStyles.video} width="853" height="480" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="SPIDER-MAN: NO WAY HOME - Official Trailer (HD)" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    {projectEmbed ? <div className={WorksStyles.video} dangerouslySetInnerHTML={{ __html:  projectEmbed}}></div> : null}
 
                     {/* Carousel for project's images/demos below the project's video. */}
                     <div className={WorksStyles.project_images_carousel_container}>
