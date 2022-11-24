@@ -72,6 +72,7 @@
     background-color: #0A0A0A;
     text-align: center;
     overflow: scroll;
+    scroll-behavior: smooth;
 }
 
 .pad {
@@ -365,5 +366,9 @@
 
     .swiper_gallery_slide div img {
         border-radius: 10px;
+    }
+
+    .image_view_container.activated {
+        padding: 3.676vw;
     }
 }

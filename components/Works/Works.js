@@ -84,9 +84,14 @@ function getProjectMedia(projectName, projectMedia) {
     return media;
 }
 
+function scrollToTop(element) {
+    element.scrollTo(0, 0);
+}
+
 
 export default function Works() {
 
+    const [showChild, setShowChild] = useState(false)
     const [checkedProjects, setCheckedProjects] = useState([]);
     const [projectsCovers, setProjectsCovers] = useState([]);
     const [projectName, setProjectName] = useState('');
@@ -99,6 +104,11 @@ export default function Works() {
 
 
     useEffect(() => {
+        setShowChild(true);
+    }, [])
+
+    useEffect(() => {
+
         const getProjects = async () => {
             try {
                 const { data: projectsData } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/proyectos.json${process.env.NEXT_PUBLIC_API_KEY}`);
@@ -112,6 +122,7 @@ export default function Works() {
                 setProjectEmbed(getProjectEmbed(getProjectData(projectName, projectsData)));
                 // setProjectData(getProjectData(getFirstProjectName(getCheckedProjects(CofcofProjects)), projectsData));
                 setProjectMedia(getProjectMedia(projectName, projectsMedia))
+                
             }
 
             catch (error) {
@@ -122,17 +133,25 @@ export default function Works() {
         getProjects();
     }, [projectName])
 
+    // let projectDescription = Object.values(projectData)[0].descripcion
+
+
+    if (!showChild) {
+        return null;
+    }
+
+    const infoContainer = document.getElementById('info_container');
 
     return (
         <section className={WorksStyles.section} id='works'>
 
             <div className={WorksStyles.poster_container}>
-                <Image src={bigCover} fill alt='cover' sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" />
+                <Image src={bigCover ? bigCover : '/No_Cover.jpg'} fill alt='cover' sizes="(max-width: 768px) 100vw,
+                  (max-width: 1200px) 50vw,
+                  33vw" />
 
                 {/* Carousel for projects. When you click in one of them, the project poster changes
-                and the data displays to the user in the "Info-container" from below. */}
+                    and the data displays to the user in the "Info-container" from below. */}
                 <div className={WorksStyles.projects_carousel_container}>
                     <p>PROJECTS</p>
 
@@ -165,25 +184,25 @@ export default function Works() {
                         {
                             checkedProjects.map(project => {
                                 return projectsCovers.map(cover => {
-                                    if(cover.nombre_proyecto === Object.values(project)[0].nombre_proyecto) {
+                                    if (cover.nombre_proyecto === Object.values(project)[0].nombre_proyecto) {
                                         return (
-                                            <SwiperSlide onClick={(e) => {setProjectName(cover.nombre_proyecto); setBigCover(`https://${cover.link_media}`)}} className={WorksStyles.swiper_slide} key={project.nombre}>
+                                            <SwiperSlide onClick={(e) => { setProjectName(cover.nombre_proyecto); scrollToTop(infoContainer); setBigCover(`https://${cover.link_media}`) }} className={WorksStyles.swiper_slide} key={project.nombre}>
                                                 <div>
                                                     <Image onClick={(e) => setProjectMedia([])} src={`https://${cover.link_media}`} fill alt="image" sizes="(max-width: 768px) 100vw,
-                      (max-width: 1200px) 50vw,
-                      33vw" />
+                          (max-width: 1200px) 50vw,
+                          33vw" />
                                                 </div>
                                             </SwiperSlide>
                                         )
                                     }
-                                    })
                                 })
+                            })
                         }
                     </Swiper>
                 </div>
             </div>
 
-            <div className={WorksStyles.info_container}>
+            <div id='info_container' className={WorksStyles.info_container}>
                 <div className={WorksStyles.pad}></div>
 
                 {projectData ? <h4>{Object.values(projectData)[0].nombre_proyecto_mostrar}</h4> : null}
@@ -213,7 +232,7 @@ export default function Works() {
                 <p className={WorksStyles.desc}>{projectData ? Object.values(projectData)[0].descripcion : null}</p>
 
                 <div>
-                    {projectEmbed ? <div className={WorksStyles.video} dangerouslySetInnerHTML={{ __html:  projectEmbed}}></div> : null}
+                    {projectEmbed ? <div className={WorksStyles.video} dangerouslySetInnerHTML={{ __html: projectEmbed }}></div> : null}
 
                     {/* Carousel for project's images/demos below the project's video. */}
                     <div className={WorksStyles.project_images_carousel_container}>
@@ -246,33 +265,33 @@ export default function Works() {
                         >
                             {
                                 projectMedia
-                                
+
                                     ?
-                                
-                                projectMedia.map(media => {
-                                    if (media.cofcof === true) {
-                                        return (
-                                            <SwiperSlide className={WorksStyles.swiper_gallery_slide} key={media.nombre_proyecto}>
-                                                <div onClick={(e) => setDemoViewer(!demoViewer)}>
-                                                    <Image src={`https://${media.link_media}`} onClick={(e) => setImaveView(`https://${media.link_media}`)} fill alt='project image demo' sizes="(max-width: 768px) 100vw,
-                          (max-width: 1200px) 50vw,
-                          33vw" />
-                                                </div>
-                                            </SwiperSlide>
-                                        )
-                                    }
-                                })
 
-                                :
+                                    projectMedia.map(media => {
+                                        if (media.cofcof === true) {
+                                            return (
+                                                <SwiperSlide className={WorksStyles.swiper_gallery_slide} key={media.nombre_proyecto}>
+                                                    <div onClick={(e) => setDemoViewer(!demoViewer)}>
+                                                        <Image src={`https://${media.link_media}`} onClick={(e) => setImaveView(`https://${media.link_media}`)} fill alt='project image demo' sizes="(max-width: 768px) 100vw,
+                              (max-width: 1200px) 50vw,
+                              33vw" />
+                                                    </div>
+                                                </SwiperSlide>
+                                            )
+                                        }
+                                    })
 
-                                null
+                                    :
+
+                                    null
                             }
                         </Swiper>
                     </div>
                 </div>
             </div>
 
-            
+
             <div className={demoViewer ? [WorksStyles.image_view_container, WorksStyles.activated].join(" ") : WorksStyles.image_view_container} onClick={(e) => setDemoViewer(!demoViewer)}>
                 <div>
                     <Image className={WorksStyles.image_view} src={imageView} fill alt='image demo view' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
