@@ -72,11 +72,16 @@ function getProjectEmbed(projectData) {
     return embed;
 }
 
-function getProjectMedia(projectData) {
+function getProjectMedia(projectName, projectMedia) {
+    let media;
 
-    let embed = Object.values(projectData)[0].embebido;
-    
-    return embed;
+    for (let property in projectMedia) {
+        if (property === projectName) {
+            media = (Object.values(projectMedia[property]));
+        }
+    }
+
+    return media;
 }
 
 
@@ -87,7 +92,7 @@ export default function Works() {
     const [projectName, setProjectName] = useState('');
     const [projectData, setProjectData] = useState();
     const [projectEmbed, setProjectEmbed] = useState('');
-    const [projectMedia, setProjectMedia] = useState('');
+    const [projectMedia, setProjectMedia] = useState([]);
     const [bigCover, setBigCover] = useState('');
 
 
@@ -102,10 +107,10 @@ export default function Works() {
                 setCheckedProjects(getCheckedProjects(CofcofProjects));
                 setProjectsCovers(getProjectsCovers(covers));
                 setBigCover(`https://${getFirstProjectCover(getProjectsCovers(covers), getCheckedProjects(CofcofProjects))}`);
-                setProjectName(projectName);
                 setProjectData(getProjectData(projectName, projectsData));
                 setProjectEmbed(getProjectEmbed(getProjectData(projectName, projectsData)));
                 // setProjectData(getProjectData(getFirstProjectName(getCheckedProjects(CofcofProjects)), projectsData));
+                setProjectMedia(getProjectMedia(projectName, projectsMedia))
             }
 
             catch (error) {
@@ -115,8 +120,6 @@ export default function Works() {
 
         getProjects();
     }, [projectName])
-
-    console.log(projectEmbed)
 
 
     return (
@@ -239,69 +242,27 @@ export default function Works() {
                             }}
                             className={WorksStyles.swiper_gallery}
                         >
-                            <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                                <div>
-                                    <Image src='/Thumbnail.jpg' fill sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" />
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                                <div>
-                                    <Image src='/image.jpeg' fill sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" />
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                                <div>
-                                    <Image src='/Poster.jpg' fill sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" />
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                                <div>
-                                    <Image src='/Poster3.png' fill sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" />
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                                <div>
-                                    <Image src='/Poster3.png' fill sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" />
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                                <div>
-                                    <Image src='/Poster3.png' fill sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" />
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                                <div>
-                                    <Image src='/Poster3.png' fill sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" />
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                                <div>
-                                    <Image src='/Poster3.png' fill sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" />
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
-                                <div>
-                                    <Image src='/Poster3.png' fill sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" />
-                                </div>
-                            </SwiperSlide>
+                            {
+                                projectMedia
+                                
+                                    ?
+                                
+                                projectMedia.map(media => {
+                                    return (
+                                        <SwiperSlide className={WorksStyles.swiper_gallery_slide}>
+                                            <div>
+                                                <Image src={`https://${media.link_media}`} fill alt='project image demo' sizes="(max-width: 768px) 100vw,
+                      (max-width: 1200px) 50vw,
+                      33vw" />
+                                            </div>
+                                        </SwiperSlide>
+                                    )
+                                })
+
+                                :
+
+                                null
+                            }
                         </Swiper>
                     </div>
                 </div>
