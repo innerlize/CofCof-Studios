@@ -144,9 +144,7 @@ export default function Works() {
                 setProjectsCovers(getProjectsCovers(covers));
                 setProjectData(getProjectData(projectName, projectsData));
                 setProjectEmbed(getProjectEmbed(getProjectData(projectName, projectsData)));
-                // setProjectData(getProjectData(getFirstProjectName(getCheckedProjects(CofcofProjects)), projectsData));
                 setProjectMedia(getProjectMedia(projectName, projectsMedia))
-                
             }
 
             catch (error) {
@@ -157,7 +155,6 @@ export default function Works() {
         getProjects();
     }, [projectName])
 
-    // let projectDescription = Object.values(projectData)[0].descripcion;
 
 
     if (!showChild) {
