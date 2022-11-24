@@ -104,6 +104,30 @@ export default function Works() {
 
 
     useEffect(() => {
+        const getProjects = async () => {
+            try {
+                const { data: projectsData } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/proyectos.json${process.env.NEXT_PUBLIC_API_KEY}`);
+                const { data: projectsMedia } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/media_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
+                const { data: CofcofProjects } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/pagina_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
+                const { data: covers } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/portada_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
+
+                let firstName = getFirstProjectName(getCheckedProjects(CofcofProjects));
+
+                setProjectName(firstName);
+                setCheckedProjects(getCheckedProjects(CofcofProjects));
+                setProjectsCovers(getProjectsCovers(covers));
+                setProjectData(getProjectData(firstName, projectsData));
+                setProjectEmbed(getProjectEmbed(getProjectData(firstName, projectsData)));
+                setProjectMedia(getProjectMedia(firstName, projectsMedia));
+                setBigCover(`https://${getFirstProjectCover(getProjectsCovers(covers), getCheckedProjects(CofcofProjects))}`)
+            }
+
+            catch (error) {
+                console.log('Error! D:', error);
+            }
+        }
+
+        getProjects();
         setShowChild(true);
     }, [])
 
@@ -133,7 +157,7 @@ export default function Works() {
         getProjects();
     }, [projectName])
 
-    // let projectDescription = Object.values(projectData)[0].descripcion
+    // let projectDescription = Object.values(projectData)[0].descripcion;
 
 
     if (!showChild) {
@@ -150,8 +174,6 @@ export default function Works() {
                   (max-width: 1200px) 50vw,
                   33vw" />
 
-                {/* Carousel for projects. When you click in one of them, the project poster changes
-                    and the data displays to the user in the "Info-container" from below. */}
                 <div className={WorksStyles.projects_carousel_container}>
                     <p>PROJECTS</p>
 
@@ -186,7 +208,7 @@ export default function Works() {
                                 return projectsCovers.map(cover => {
                                     if (cover.nombre_proyecto === Object.values(project)[0].nombre_proyecto) {
                                         return (
-                                            <SwiperSlide onClick={(e) => { setProjectName(cover.nombre_proyecto); scrollToTop(infoContainer); setBigCover(`https://${cover.link_media}`) }} className={WorksStyles.swiper_slide} key={project.nombre}>
+                                            <SwiperSlide onClick={(e) => { setProjectName(cover.nombre_proyecto); scrollToTop(infoContainer); setBigCover(`https://${cover.link_media}`) }} className={WorksStyles.swiper_slide} key={project.link_media}>
                                                 <div>
                                                     <Image onClick={(e) => setProjectMedia([])} src={`https://${cover.link_media}`} fill alt="image" sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
@@ -206,7 +228,6 @@ export default function Works() {
                 <div className={WorksStyles.pad}></div>
 
                 {projectData ? <h4>{Object.values(projectData)[0].nombre_proyecto_mostrar}</h4> : null}
-                {/* <h4>Spider-Man: No Way Home</h4> */}
 
                 <div className={WorksStyles.init_info_container}>
                     <div>
@@ -234,7 +255,6 @@ export default function Works() {
                 <div>
                     {projectEmbed ? <div className={WorksStyles.video} dangerouslySetInnerHTML={{ __html: projectEmbed }}></div> : null}
 
-                    {/* Carousel for project's images/demos below the project's video. */}
                     <div className={WorksStyles.project_images_carousel_container}>
                         <Swiper
                             breakpoints={{
