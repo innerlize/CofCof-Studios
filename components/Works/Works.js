@@ -152,7 +152,8 @@ export default function Works() {
                 setProjectsCovers(getProjectsCovers(covers));
                 setProjectData(getProjectData(projectName, projectsData));
                 setProjectEmbed(getProjectEmbed(getProjectData(projectName, projectsData)));
-                setProjectMedia(getProjectMedia(projectName, projectsMedia))
+                setProjectMedia(getProjectMedia(projectName, projectsMedia));
+                setDataVerification(getDataVerification(getProjectData(projectName, projectsData)));
             }
 
             catch (error) {
@@ -161,6 +162,7 @@ export default function Works() {
         }
 
         getProjects();
+
     }, [projectName])
 
 
@@ -266,7 +268,7 @@ export default function Works() {
                         </div>
 
                             :
-
+                            
                         null
                     }
                     
