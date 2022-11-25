@@ -364,7 +364,7 @@ export default function Works() {
                                     projectMedia.map(media => {
                                         if (media.cofcof === true && media.tipo === 'imagen') {
                                             return (
-                                                <SwiperSlide className={WorksStyles.swiper_gallery_slide} key={media.nombre_proyecto}>
+                                                <SwiperSlide className={WorksStyles.swiper_gallery_slide} key={media.link_media}>
                                                     <div onClick={(e) => setDemoViewer(!demoViewer)}>
                                                         <Image src={`https://${media.link_media}`} onClick={(e) => setImaveView(`https://${media.link_media}`)} fill alt='project image demo' sizes="(max-width: 768px) 100vw,
                               (max-width: 1200px) 50vw,
