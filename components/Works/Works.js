@@ -27,10 +27,13 @@ function getCheckedProjects(projects) {
         }
     })
 
+
+    // console.log(Object.values(checkedCofCofProjects[0])[0].nombre_proyecto)
+
     return checkedCofCofProjects;
 }
 
-function getProjectsCovers(covers) {
+function getProjectsCovers(covers, order) {
 
     const projectsCovers = [];
 
@@ -90,6 +93,20 @@ function getDataVerification(projectData) {
     return data;
 }
 
+function sortProjects(projectsOrder, projects) {
+    let cofcofProjectsOrder = projectsOrder.cofcof;
+    let sortedProjects = [];
+
+
+    cofcofProjectsOrder.map(order => {
+        let xd = projects.find(project => Object.values(project)[0].nombre_proyecto === order.name);
+
+        sortedProjects.push(xd);
+    })
+
+    return sortedProjects;
+}
+
 function scrollToTop(element) {
     element.scrollTo(0, 0);
 }
@@ -117,17 +134,18 @@ export default function Works() {
                 const { data: projectsMedia } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/media_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
                 const { data: CofcofProjects } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/pagina_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
                 const { data: covers } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/portada_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
+                const { data: order } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/orden_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
 
-                let firstName = getFirstProjectName(getCheckedProjects(CofcofProjects));
+                let firstName = getFirstProjectName(sortProjects(order, getCheckedProjects(CofcofProjects)));
 
                 setProjectName(firstName);
-                setCheckedProjects(getCheckedProjects(CofcofProjects));
-                setProjectsCovers(getProjectsCovers(covers));
+                setCheckedProjects(sortProjects(order, getCheckedProjects(CofcofProjects)));
+                setProjectsCovers(getProjectsCovers(covers, order));
                 setProjectData(getProjectData(firstName, projectsData));
                 setProjectEmbed(getProjectEmbed(getProjectData(firstName, projectsData)));
                 setProjectMedia(getProjectMedia(firstName, projectsMedia));
                 setDataVerification(getDataVerification(getProjectData(firstName, projectsData)));
-                setBigCover(`https://${getFirstProjectCover(getProjectsCovers(covers), getCheckedProjects(CofcofProjects))}`);
+                setBigCover(`https://${getFirstProjectCover(getProjectsCovers(covers), sortProjects(order, getCheckedProjects(CofcofProjects)))}`);
             }
 
             catch (error) {
@@ -147,8 +165,9 @@ export default function Works() {
                 const { data: projectsMedia } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/media_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
                 const { data: CofcofProjects } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/pagina_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
                 const { data: covers } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/portada_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
+                const { data: order } = await axios.get(`https://porfolio-b6670-default-rtdb.firebaseio.com/orden_proyecto.json${process.env.NEXT_PUBLIC_API_KEY}`);
 
-                setCheckedProjects(getCheckedProjects(CofcofProjects));
+                setCheckedProjects(sortProjects(order, getCheckedProjects(CofcofProjects)));
                 setProjectsCovers(getProjectsCovers(covers));
                 setProjectData(getProjectData(projectName, projectsData));
                 setProjectEmbed(getProjectEmbed(getProjectData(projectName, projectsData)));
@@ -216,9 +235,9 @@ export default function Works() {
                                 return projectsCovers.map(cover => {
                                     if (cover.nombre_proyecto === Object.values(project)[0].nombre_proyecto) {
                                         return (
-                                            <SwiperSlide onClick={(e) => { setProjectName(cover.nombre_proyecto); scrollToTop(infoContainer); setBigCover(`https://${cover.link_media}`) }} className={WorksStyles.swiper_slide} key={project.link_media}>
+                                            <SwiperSlide onClick={(e) => { setProjectMedia([]); setProjectName(cover.nombre_proyecto); scrollToTop(infoContainer); setBigCover(`https://${cover.link_media}`) }} className={WorksStyles.swiper_slide} key={project.link_media}>
                                                 <div>
-                                                    <Image onClick={(e) => setProjectMedia([])} src={`https://${cover.link_media}`} fill alt="image" sizes="(max-width: 768px) 100vw,
+                                                    <Image src={`https://${cover.link_media}`} fill alt="image" sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw" />
                                                 </div>
