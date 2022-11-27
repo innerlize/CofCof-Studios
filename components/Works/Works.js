@@ -107,10 +107,6 @@ function sortProjects(projectsOrder, projects) {
     return sortedProjects;
 }
 
-function scrollToTop(element) {
-    element.scrollTo(0, 0);
-}
-
 
 export default function Works() {
 
@@ -126,6 +122,20 @@ export default function Works() {
     const [imageView, setImaveView] = useState('');
     const [bigCover, setBigCover] = useState('');
 
+
+
+    function resetData(currentName, cover) {
+
+        if (currentName === projectName) {
+            return;
+        }
+
+        setProjectName(currentName);
+        setProjectData();
+        setProjectEmbed();
+        setProjectMedia();
+        setBigCover(`https://${cover}`);
+    }
 
     useEffect(() => {
         const getProjects = async () => {
@@ -197,9 +207,7 @@ export default function Works() {
         <section className={WorksStyles.section} id='works'>
 
             <div className={WorksStyles.poster_container}>
-                <Image src={bigCover ? bigCover : '/No_Cover.jpg'} fill alt='cover' sizes="(max-width: 768px) 100vw,
-                  (max-width: 1200px) 50vw,
-                  33vw" />
+                { projectData && bigCover ? <Image src={bigCover} className={WorksStyles.xd} fill alt='cover' /> : <Image src={'/a.gif'} fill alt='cover' /> }
 
                 <div className={WorksStyles.projects_carousel_container}>
                     <p>PROJECTS</p>
@@ -235,7 +243,7 @@ export default function Works() {
                                 return projectsCovers.map(cover => {
                                     if (cover.nombre_proyecto === Object.values(project)[0].nombre_proyecto) {
                                         return (
-                                            <SwiperSlide onClick={(e) => { setProjectMedia([]); setProjectName(cover.nombre_proyecto); scrollToTop(infoContainer); setBigCover(`https://${cover.link_media}`) }} className={WorksStyles.swiper_slide} key={project.link_media}>
+                                            <SwiperSlide onClick={(e) => { resetData(cover.nombre_proyecto, cover.link_media) }} className={WorksStyles.swiper_slide} key={project.link_media}>
                                                 <div>
                                                     <Image src={`https://${cover.link_media}`} fill alt="image" sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
@@ -262,7 +270,7 @@ export default function Works() {
 
                             ?
 
-                        <div>
+                        <div className={WorksStyles.client}>
                             <p>Client</p>
                             <p>{Object.values(projectData)[0].cliente}</p>
                         </div>
@@ -277,7 +285,7 @@ export default function Works() {
 
                             ?
 
-                        <div>
+                        <div className={WorksStyles.date}>
                             <p>Date</p>
                             <p>
                                 {Object.values(projectData)[0].fecha_inicio}
@@ -296,7 +304,7 @@ export default function Works() {
 
                             ?
 
-                        <div>
+                        <div className={WorksStyles.softwares}>
                             <p>Softwares</p>
                             <p>{Object.values(projectData)[0].software}</p>
                         </div>

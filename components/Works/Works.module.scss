@@ -14,6 +14,10 @@
     object-fit: cover;
 }
 
+.xd {
+    animation: load .4s ease-in-out backwards;
+}
+
 .projects_carousel_container {
     position: absolute;
     width: 100%;
@@ -88,6 +92,7 @@
     font-size: 20px;
     font-weight: 900;
     color: #15B4E7;
+    animation: intro .4s ease-in-out backwards;
 }
 
 .init_info_container {
@@ -95,6 +100,10 @@
     flex-direction: column;
     gap: 42px;
     margin-top: 30px;
+}
+
+.init_info_container div {
+    animation: intro .4s .1s ease-in-out backwards;
 }
 
 .info_container div div p {
@@ -114,6 +123,8 @@
     font-weight: 400;
     font-family: Hind, sans-serif;
     margin: 40px 0 30px 0;
+    white-space: pre-line;
+    animation: intro .4s .2s ease-in-out backwards;
 }
 
 .video {
@@ -122,6 +133,7 @@
     margin-bottom: 18px;
     border-radius: 10px;
     box-shadow: 0 6px 10px #000000;
+    animation: intro .4s .3s ease-in-out backwards;
 }
 
 .video iframe,
@@ -133,6 +145,7 @@
 
 .swiper_gallery {
     padding: 5px 50px;
+    animation: intro .4s .4s ease-in-out backwards;
 }
 
 .swiper_gallery_slide {
@@ -320,14 +333,13 @@
     .init_info_container {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        width: 100%;
         gap: 0;
-        padding-right: 6.691vw;
         margin-top: 2.941vw;
     }
-
-    .softwares {
-        max-width: 17vw;
+    
+    .init_info_container div {
+        width: 100%;
     }
     
     .info_container div div p {
@@ -371,4 +383,26 @@
     .image_view_container.activated {
         padding: 3.676vw;
     }
+}
+
+@keyframes intro {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }     
+}
+
+@keyframes load {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }     
 }
