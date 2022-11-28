@@ -253,9 +253,9 @@ export default function Works() {
                                         )
                                     } else if (cover === undefined || project === undefined) {
                                         return (
-                                            <SwiperSlide>
+                                            <SwiperSlide key='null'>
                                                 <div>
-                                                    <Image src='/a.gif' fill alt="image" sizes="(max-width: 768px) 100vw,
+                                                    <Image src='/Facebook.svg' fill alt="image" sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw" />
                                                 </div>
