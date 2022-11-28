@@ -58,6 +58,9 @@ export default function Contact() {
                         <a href='https://www.linkedin.com/company/cofcofstudios/?originalSubdomain=my' target='_blank' rel="noreferrer"><Image src='/LinkedIn.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" /></a>
+                        <a href='https://api.whatsapp.com/send/?phone=5491121587183' target='_blank' rel="noreferrer"><Image src='/WhatsApp.png' fill alt="imagen" sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw" /></a>
                         <a href='https://www.instagram.com/cofcofstudios/?hl=es' target='_blank' rel="noreferrer"><Image src='/Instagram.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" /></a>
