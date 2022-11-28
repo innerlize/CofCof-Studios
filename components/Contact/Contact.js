@@ -55,18 +55,18 @@ export default function Contact() {
                 <div className={ContactStyles.social}>
                     <h4>Follow us! ;)</h4>
                     <div className={ContactStyles.social_media_container}>
-                        <div><a><Image src='/LinkedIn.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
+                        <a href='https://www.linkedin.com/company/cofcofstudios/?originalSubdomain=my' target='_blank'><Image src='/LinkedIn.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
-              33vw" /></a></div>
-                        <div><a><Image src='/Instagram.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
+              33vw" /></a>
+                        <a href='https://www.instagram.com/cofcofstudios/?hl=es' target='_blank'><Image src='/Instagram.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
-              33vw" /></a></div>
-                        <div><a><Image src='/Twitter.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
+              33vw" /></a>
+                        <a href='https://twitter.com/' target='_blank'><Image src='/Twitter.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
-              33vw" /></a></div>
-                        <div><a><Image src='/Facebook.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
+              33vw" /></a>
+                        <a href='https://es-la.facebook.com/cofcofstudios/' target='_blank'><Image src='/Facebook.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
-              33vw" /></a></div>
+              33vw" /></a>
                     </div>
                 </div>
             </div>

@@ -75,14 +75,27 @@
     gap: 22px;
 }
 
-.social_media_container div {
+.social_media_container a {
     position: relative;
+    display: inline-block;
     width: 25px;
     height: 25px;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
 }
 
 .social_media_container a:hover {
-    color: #15B4E7;
+    background-color: #F2F2F2;
+
+}
+
+.social_media_container a img {
+    filter: invert(99%) sepia(97%) saturate(4910%) hue-rotate(182deg) brightness(122%) contrast(90%);
+    transition: all .2s ease-in-out;
+}
+
+.social_media_container a:hover > img {
+    filter: invert(76%) sepia(30%) saturate(6688%) hue-rotate(155deg) brightness(92%) contrast(95%);
 }
 
 @media only screen and (min-width: 768px) {
@@ -137,7 +150,7 @@
         gap: 30px;
     }
 
-    .social_media_container div {
+    .social_media_container a {
         width: 42px;
         height: 42px;
     }
@@ -201,7 +214,7 @@
         gap: 30px;
     }
 
-    .social_media_container div {
+    .social_media_container a {
         width: 2.353vw;
         height: 2.353vw;
     }
