@@ -27,9 +27,6 @@ function getCheckedProjects(projects) {
         }
     })
 
-
-    // console.log(Object.values(checkedCofCofProjects[0])[0].nombre_proyecto)
-
     return checkedCofCofProjects;
 }
 
@@ -51,7 +48,17 @@ function getFirstProjectCover(covers, projects) {
 }
 
 function getFirstProjectName(projects) {
-    let firstProjectName = Object.values(projects[0])[0].nombre_proyecto;
+    // let firstProjectName = Object.values(projects[0])[0].nombre_proyecto;
+
+    let firstProjectName;
+
+    let phantom = projects.find(project => project !== undefined);
+
+    if (phantom !== undefined) {
+        firstProjectName = Object.values(phantom)[0].nombre_proyecto;
+    }
+
+    console.log(firstProjectName)
 
     return firstProjectName;
 }
@@ -270,7 +277,7 @@ export default function Works() {
 
                 <div className={WorksStyles.init_info_container}>
                     {
-                        projectData && dataVerification.includes('cliente')
+                        projectData && dataVerification !== undefined && dataVerification.includes('cliente')
 
                             ?
 
@@ -285,7 +292,7 @@ export default function Works() {
                     }
                     
                     {
-                        projectData && dataVerification.includes('fechas')
+                        projectData && dataVerification !== undefined && dataVerification.includes('fechas')
 
                             ?
 
@@ -304,7 +311,7 @@ export default function Works() {
                     }
                     
                     {
-                        projectData && dataVerification.includes('software')
+                        projectData && dataVerification !== undefined && dataVerification.includes('software')
 
                             ?
 
@@ -320,7 +327,7 @@ export default function Works() {
                 </div>
                     
                     {
-                        projectData && dataVerification.includes('descripcion')
+                        projectData && dataVerification !== undefined && dataVerification.includes('descripcion')
 
                             ?
 
@@ -333,7 +340,7 @@ export default function Works() {
 
                 <div>
                     {
-                        projectEmbed && dataVerification.includes('embebido')
+                        projectEmbed && dataVerification !== undefined && dataVerification.includes('embebido')
 
                             ?
 
@@ -345,7 +352,7 @@ export default function Works() {
                     }
 
                     {
-                        projectMedia && !projectEmbed || !dataVerification.includes('embebido')
+                        projectMedia && dataVerification !== undefined && projectMedia !== undefined
 
                             ?
 
@@ -388,7 +395,7 @@ export default function Works() {
                             className={WorksStyles.swiper_gallery}
                         >
                             {
-                                projectMedia
+                                projectMedia && projectMedia !== undefined
 
                                     ?
 
