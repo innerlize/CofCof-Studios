@@ -30,7 +30,7 @@ function getCheckedProjects(projects) {
     return checkedCofCofProjects;
 }
 
-function getProjectsCovers(covers, order) {
+function getProjectsCovers(covers) {
 
     const projectsCovers = [];
 
@@ -42,7 +42,14 @@ function getProjectsCovers(covers, order) {
 }
 
 function getFirstProjectCover(covers, projects) {
-    let firstCover = covers.find(cover => cover.nombre_proyecto === Object.values(projects[0])[0].nombre_proyecto)
+    let firstCover;
+
+    let phantom = projects.find(project => project !== undefined);
+
+    if (phantom !== undefined) {
+        firstCover = covers.find(cover => cover.nombre_proyecto === Object.values(phantom)[0].nombre_proyecto)
+    }
+
 
     return firstCover.link_media;
 }
@@ -57,8 +64,6 @@ function getFirstProjectName(projects) {
     if (phantom !== undefined) {
         firstProjectName = Object.values(phantom)[0].nombre_proyecto;
     }
-
-    console.log(firstProjectName)
 
     return firstProjectName;
 }
