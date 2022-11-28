@@ -245,7 +245,7 @@ export default function Works() {
                                         return;
                                     }
                                     
-                                    else if(cover && project && cover.nombre_proyecto === Object.values(project)[0].nombre_proyecto) {
+                                    else if (cover && project && cover.nombre_proyecto === Object.values(project)[0].nombre_proyecto) {
                                         return (
                                             <SwiperSlide onClick={(e) => { resetData(cover.nombre_proyecto, cover.link_media) }} className={WorksStyles.swiper_slide} key={project.link_media}>
                                                 <div>
