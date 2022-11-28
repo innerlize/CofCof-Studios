@@ -241,21 +241,15 @@ export default function Works() {
                         {
                             checkedProjects.map(project => {
                                 return projectsCovers.map(cover => {
-                                    if (cover && project && cover.nombre_proyecto === Object.values(project)[0].nombre_proyecto) {
+                                    if (cover === undefined || project === undefined) {
+                                        return;
+                                    }
+                                    
+                                    else if(cover && project && cover.nombre_proyecto === Object.values(project)[0].nombre_proyecto) {
                                         return (
                                             <SwiperSlide onClick={(e) => { resetData(cover.nombre_proyecto, cover.link_media) }} className={WorksStyles.swiper_slide} key={project.link_media}>
                                                 <div>
                                                     <Image src={`https://${cover.link_media}`} fill alt="image" sizes="(max-width: 768px) 100vw,
-                          (max-width: 1200px) 50vw,
-                          33vw" />
-                                                </div>
-                                            </SwiperSlide>
-                                        )
-                                    } else if (cover === undefined || project === undefined) {
-                                        return (
-                                            <SwiperSlide key='null'>
-                                                <div>
-                                                    <Image src='/Facebook.svg' fill alt="image" sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw" />
                                                 </div>
