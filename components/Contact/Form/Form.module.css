@@ -59,6 +59,15 @@
     background-color: #15B4E7;
 }
 
+.submited {
+    color: rgba(10, 10, 10, .5) !important;
+    background-color: #F2F2F2 !important;
+}
+
+.submited:hover {
+    color: rgba(10, 10, 10, .6) !important;
+}
+
 .flex_data {
     display: flex;
     justify-content: space-between;
