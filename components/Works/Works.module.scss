@@ -23,7 +23,7 @@
     position: absolute;
     width: 100%;
     bottom: 0;
-    background-color: rgba(10, 10, 10, 0.8);
+    background-color: rgba(10, 10, 10, 1);
 }
 
 .projects_carousel_container p {
@@ -297,7 +297,7 @@
     }
 
     .projects_carousel_container p {
-        display: block;
+        display: none;
     }
 
     .swiper {

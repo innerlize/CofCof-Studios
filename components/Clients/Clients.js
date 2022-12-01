@@ -86,45 +86,6 @@ export default function Clients() {
                         })
                     }
                 </Swiper>
-
-                <Swiper
-                    breakpoints={{
-                        // when window width is >= 0
-                        0: {
-                            slidesPerView: 3
-                        },
-
-                        // when window width is >= 768
-                        768: {
-                            slidesPerView: 4
-                        },
-
-                        // when window width is >= 1020
-                        1020: {
-                            slidesPerView: 7
-                        }
-                    }}
-                    slidesPerView="auto"
-                    spaceBetween={25}
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                    }}
-                    modules={[Autoplay]}
-                    className="mySwiper"
-                    loop={true}
-                    dir="rtl"
-                >
-                    {
-                        logos.map(logo => {
-                            return (
-                                <SwiperSlide className={ClientsStyles.logo_container} key={logo.link_media} >
-                                    <Image src={`https://${logo.link_media}`} width={60} height={60} alt="logo" />
-                                </SwiperSlide>
-                            )
-                        })
-                    }
-                </Swiper>
             </div>
         </section>
     )

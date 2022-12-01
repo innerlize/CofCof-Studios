@@ -33,6 +33,7 @@ export default function Form() {
           className={FormStyles.name}
           type="text"
           placeholder="Name"
+          autoComplete="off"
           required
         ></input>
         <input
@@ -40,6 +41,7 @@ export default function Form() {
           className={FormStyles.company}
           type="text"
           placeholder="Company"
+          autoComplete="off"
           required
         ></input>
       </div>
@@ -49,6 +51,7 @@ export default function Form() {
         className={FormStyles.mail}
         type="email"
         placeholder="Mail"
+        autoComplete="off"
         required
       ></input>
 
