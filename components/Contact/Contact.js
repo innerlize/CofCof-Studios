@@ -28,7 +28,7 @@ export default function Contact() {
               (max-width: 1200px) 50vw,
               33vw" />
                         </div>
-                        <a>+54 9 112 1 587 183</a>
+                        <a href='https://api.whatsapp.com/send/?phone=5491121587183' target='_blank' rel="noreferrer">+54 9 112 1 587 183</a>
                     </div>
 
                     <div className={ContactStyles.extra_contact_info_container}>
@@ -56,9 +56,6 @@ export default function Contact() {
                     <h4>Follow us! ;)</h4>
                     <div className={ContactStyles.social_media_container}>
                         <a href='https://www.linkedin.com/company/cofcofstudios/?originalSubdomain=my' target='_blank' rel="noreferrer"><Image src='/LinkedIn.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw" /></a>
-                        <a href='https://api.whatsapp.com/send/?phone=5491121587183' target='_blank' rel="noreferrer"><Image src='/WhatsApp.png' fill alt="imagen" sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" /></a>
                         <a href='https://www.instagram.com/cofcofstudios/?hl=es' target='_blank' rel="noreferrer"><Image src='/Instagram.svg' fill alt="imagen" sizes="(max-width: 768px) 100vw,
