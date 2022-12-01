@@ -12,7 +12,7 @@ export default function Form() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm("service_7yalm0g", "template_ofncmab", form.current, "S3ejQostNeT3XqUtu")
+    emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, form.current, process.env.NEXT_PUBLIC_PUBLIC_KEY)
       .then(
         (result) => {
           setIsSubmited(true)
@@ -20,7 +20,7 @@ export default function Form() {
         },
 
         (error) => {
-          console.log(error.text);
+          setButtonState('Error! Your message was not sent.')
         }
       );
   };
